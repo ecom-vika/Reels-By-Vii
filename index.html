@@ -1,1 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaAI - Smart Solutions</title>
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===========================
+   Global Styles
+=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8fafc;
+    color:#333;
+    line-height:1.6;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+section{
+    padding:80px 0;
+}
+
+h1,h2,h3{
+    color:#111827;
+}
+
+p{
+    color:#6b7280;
+}
+
+/* ===========================
+   Navigation
+=========================== */
+
+nav{
+    position:fixed;
+    width:100%;
+    background:white;
+    box-shadow:0 2px 15px rgba(0,0,0,.05);
+    z-index:1000;
+}
+
+.nav-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#2563eb;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#374151;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#2563eb;
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero{
+    padding-top:170px;
+    text-align:center;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    padding-bottom:120px;
+}
+
+.hero h1{
+    color:white;
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#f3f4f6;
+    font-size:1.1rem;
+    max-width:700px;
+    margin:auto;
+    margin-bottom:40px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    background:white;
+    color:#2563eb;
+    padding:15px 35px;
+    border-radius:40px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+/* ===========================
+   About Section
+=========================== */
+
+.about{
+    text-align:center;
+}
+
+.about h2{
+    margin-bottom:20px;
+    font-size:2.2rem;
+}
+
+.about p{
+    max-width:750px;
+    margin:auto;
+}
+
+/* ===========================
+   Features Section
+=========================== */
+
+.features-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-top:50px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+/* ===========================
+   Contact Section
+=========================== */
+
+.contact{
+    background:white;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.contact h2{
+    margin-bottom:15px;
+}
+
+.contact p{
+    margin-bottom:25px;
+}
+
+.email{
+    color:#2563eb;
+    font-weight:600;
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media(max-width:900px){
+
+.features-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:2.3rem;
+}
+
+nav ul{
+gap:15px;
+font-size:14px;
+}
+
+}
+
+@media(max-width:600px){
+
+.nav-container{
+flex-direction:column;
+gap:15px;
+}
+
+.hero{
+padding-top:210px;
+}
+
+.hero h1{
+font-size:2rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<!-- ===========================
+     Navigation
+=========================== -->
+
+<nav>
+<div class="container nav-container">
+
+<div class="logo">NovaAI</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
+</nav>
+
+<!-- ===========================
+     Hero Section
+=========================== -->
+
+<section class="hero">
+
+<div class="container">
+
+<h1>AI That Helps Your Business Grow</h1>
+
+<p>
+Empower your workflow with intelligent automation, real-time insights,
+and modern AI tools designed for startups and growing businesses.
+</p>
+
+<a href="#contact" class="btn">
+Get Started
+</a>
+
+</div>
+
+</section>
+
+<!-- ===========================
+     About Section
+=========================== -->
+
+<section id="about" class="about">
+
+<div class="container">
+
+<h2>About Us</h2>
+
+<p>
+NovaAI provides innovative artificial intelligence solutions that simplify
+daily operations, increase productivity, and help businesses make smarter
+decisions through modern technology.
+</p>
+
+</div>
+
+</section>
+
+<!-- ===========================
+     Features Section
+=========================== -->
+
+<section id="features">
+
+<div class="container">
+
+<h2 style="text-align:center;font-size:2.2rem;">
+Why Choose Us
+</h2>
+
+<div class="features-grid">
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Fast Performance</h3>
+<p>
+Lightning-fast AI solutions built for speed, reliability,
+and seamless user experience.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🔒</div>
+<h3>Secure Platform</h3>
+<p>
+Enterprise-level security ensures your business data
+remains protected at all times.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📈</div>
+<h3>Business Growth</h3>
+<p>
+Gain valuable insights and automate repetitive tasks
+to focus on what matters most.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+     Contact Section
+=========================== -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact">
+
+<h2>Let's Work Together</h2>
+
+<p>
+Ready to transform your business with AI?
+Reach out today and let's build something amazing.
+</p>
+
+<p class="email">
+contact@novaai.com
+</p>
+
+<a href="#" class="btn">
+Contact Us
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+     Footer
+=========================== -->
+
+<footer>
+
+© 2026 NovaAI. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>

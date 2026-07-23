@@ -13,23 +13,16 @@
     <style>
         /* ===== CSS Variables - Inspired by the photo's elegant palette ===== */
         :root {
-            /* Cream/White from the outfit */
             --cream: #F5F1EC;
             --white: #FFFFFF;
             --off-white: #FAF8F5;
-            
-            /* Dark tones from hair and background */
             --dark: #1A1A1A;
             --charcoal: #2D2D2D;
             --gray: #6B6B6B;
             --light-gray: #E8E4DF;
-            
-            /* Warm accent - skin tone inspired */
             --accent: #C9A96E;
             --accent-light: #D4B87A;
             --accent-dark: #B8956A;
-            
-            /* Gradient combining warm tones */
             --gradient: linear-gradient(135deg, #C9A96E 0%, #8B7355 100%);
         }
 
@@ -198,14 +191,16 @@
             position: relative;
         }
 
-        .about-image img {
+        .about-image .image-bg {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             transition: transform 0.5s;
         }
 
-        .about-image:hover img {
+        .about-image:hover .image-bg {
             transform: scale(1.05);
         }
 
@@ -463,7 +458,7 @@
             <div class="logo">Reels <span>by Vi</span></div>
             <ul class="nav-links">
                 <li><a href="#about">Իմ մասին</a></li>
-                <li><a href="#services">Ծառայություններ</a></li>
+                <li><a href="#services">առայություններ</a></li>
                 <li><a href="#testimonials">Կարծիքներ</a></li>
                 <li><a href="#contact">Կապ</a></li>
             </ul>
@@ -475,7 +470,7 @@
         <div class="container">
             <h1>Ստեղծում եմ <span>գրավիչ</span> Reels</h1>
             <p>Ձեր ամենակարևոր պահերը՝ դինամիկ, ոճային և պրոֆեսիոնալ Reels-ների տեսքով</p>
-            <a href="#contact" class="cta-button">Պատվիրել հիմա</a>
+            <a href="#contact" class="cta-button">ատվիրել հիմա</a>
         </div>
     </section>
 
@@ -484,14 +479,13 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <!-- Տեղադրեք ձեր նկարը այստեղ -->
-                    <img src="your-photo.jpg" alt="Վիկա - Reels by Vi">
+                    <div class="image-bg" style="background-image: url('your-photo.jpg')"></div>
                 </div>
                 <div class="about-text">
                     <h2>Իմ մասին</h2>
-                    <p>Բարև, ես Վիկան եմ՝ Content Creator և Reels Maker։</p>
-                    <p>Արդեն 2 տարի է, ինչ զբաղվում եմ Reels-ների ստեղծմամբ և օգնում եմ մարդկանց պահպանել իրենց ամենագեղեցիկ հիշողությունները սոցիալական ցանցերում։</p>
-                    <p>Իմ աշխատանքը սա է՝ ձեր պահերը դարձնել անմոռանալի, ոճային և գրավիչ։</p>
+                    <p>Բարև, ես Վիկան եմ Content Creator և Reels Maker։</p>
+                    <p>Արդեն 2 տարի է, ինչ զբաղվում եմ Reels-ների ստեղծմամբ և գնում եմ մարդկանց պահպանել իրենց ամենագեղեցիկ հիշողությունները սոցիալական ցանցերում։</p>
+                    <p>մ աշխատանքը սա է՝ ձեր պահերը դարձնել անմոռանալի, ոճային և գրավիչ։</p>
                 </div>
             </div>
         </div>
@@ -514,15 +508,15 @@
                 <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-icon">💍</div>
-                    <h3>Հարսանեկան Փաթեթ</h3>
-                    <p>Ամբողջական ծածկույթ առավոտից մինչև տորթի արարողություն</p>
+                    <h3>Հարսանեկան աթեթ</h3>
+                    <p>Ամբողջական ածկույթ առավոտից մինչև տորթի արարողություն</p>
                     <div class="price">39,900 ֏</div>
                     <div class="price-note">ներառում է 7 ռիլ</div>
                 </div>
 
                 <!-- Service 3 -->
                 <div class="service-card">
-                    <div class="service-icon">🎉</div>
+                    <div class="service-icon"></div>
                     <h3>Ծնունդներ և Իվենտներ</h3>
                     <p>Ձեր հատուկ օրվա պրոֆեսիոնալ լուսաբանում</p>
                     <div class="price">15,000 ֏</div>
@@ -543,8 +537,8 @@
                     <div class="testimonial-author">
                         <div class="author-avatar">Ա</div>
                         <div class="author-info">
-                            <h4>Անի և ավիթ</h4>
-                            <p>Հարսանեկան ույգ</p>
+                            <h4>Անի և Դավիթ</h4>
+                            <p>Հարսանեկան զույգ</p>
                         </div>
                     </div>
                 </div>
@@ -555,7 +549,7 @@
                     <div class="testimonial-author">
                         <div class="author-avatar">Մ</div>
                         <div class="author-info">
-                            <h4>արիամ</h4>
+                            <h4>Մարիամ</h4>
                             <p>Content Creator</p>
                         </div>
                     </div>
@@ -563,12 +557,12 @@
 
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Իմ ծննդյան Reels-ները պարզապես հրաշալի էին։ Վիկան շատ լավ է հասկանում, թե ինչ է պետք հաճախորդին։"</p>
+                    <p class="testimonial-text">"Իմ ծննդյան Reels-ները պարզապես հրաշալի էին։ Վիկան շատ ավ է հասկանում, թե ինչ է պետք հաճախորդին։"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar"></div>
                         <div class="author-info">
                             <h4>Լիլիթ</h4>
-                            <p>Մշտական հաճախորդ</p>
+                            <p>շտական հաճախորդ</p>
                         </div>
                     </div>
                 </div>

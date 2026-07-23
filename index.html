@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,9 +28,9 @@ scroll-behavior:smooth;
 body{
 
 font-family:'Outfit',sans-serif;
-background:#fff;
+background:#ffffff;
 color:#222;
-line-height:1.7;
+overflow-x:hidden;
 
 }
 
@@ -40,9 +42,41 @@ margin:auto;
 
 }
 
-/* =======================
+section{
+
+padding:110px 0;
+
+}
+
+img{
+
+max-width:100%;
+display:block;
+
+}
+
+a{
+
+text-decoration:none;
+
+}
+
+h1,h2,h3,h4{
+
+font-weight:700;
+
+}
+
+p{
+
+color:#666;
+line-height:1.8;
+
+}
+
+/* ==========================
 HEADER
-======================= */
+========================== */
 
 header{
 
@@ -52,7 +86,7 @@ left:0;
 width:100%;
 background:#111;
 padding:22px 0;
-z-index:999;
+z-index:9999;
 
 }
 
@@ -69,7 +103,6 @@ align-items:center;
 font-size:30px;
 font-weight:800;
 color:#fff;
-letter-spacing:1px;
 
 }
 
@@ -87,30 +120,27 @@ gap:35px;
 
 }
 
-nav a{
+nav ul li a{
 
 color:white;
-text-decoration:none;
 font-weight:500;
-transition:.3s;
+transition:.35s;
 
 }
 
-nav a:hover{
+nav ul li a:hover{
 
 color:#e63946;
 
 }
 
-
-/* =======================
+/* ==========================
 Hero
-======================= */
+========================== */
 
 .hero{
 
-padding-top:170px;
-padding-bottom:120px;
+padding-top:190px;
 
 }
 
@@ -125,7 +155,7 @@ gap:80px;
 
 .hero h1{
 
-font-size:62px;
+font-size:68px;
 line-height:1.1;
 margin-bottom:25px;
 
@@ -140,7 +170,6 @@ color:#e63946;
 .hero p{
 
 font-size:20px;
-color:#666;
 margin-bottom:40px;
 
 }
@@ -148,11 +177,10 @@ margin-bottom:40px;
 .btn{
 
 display:inline-block;
-padding:17px 40px;
+padding:18px 42px;
+border-radius:50px;
 background:#e63946;
 color:white;
-border-radius:50px;
-text-decoration:none;
 font-weight:600;
 transition:.35s;
 
@@ -161,26 +189,50 @@ transition:.35s;
 .btn:hover{
 
 background:#111;
-transform:translateY(-5px);
+transform:translateY(-6px);
 
 }
 
-.hero img{
+.hero-image{
 
-width:100%;
+position:relative;
+
+}
+
+.hero-image img{
+
 border-radius:30px;
-box-shadow:0 20px 50px rgba(0,0,0,.18);
+box-shadow:0 25px 50px rgba(0,0,0,.18);
 
 }
 
+.badge{
 
-/* =======================
+position:absolute;
+bottom:20px;
+left:-20px;
+
+background:white;
+padding:18px 25px;
+border-radius:20px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+.badge h4{
+
+color:#e63946;
+
+}
+
+/* ==========================
 About
-======================= */
+========================== */
 
 .about{
 
-padding:120px 0;
+background:#fafafa;
 
 }
 
@@ -195,14 +247,13 @@ align-items:center;
 
 .about img{
 
-width:100%;
-border-radius:25px;
+border-radius:30px;
 
 }
 
 .section-title{
 
-font-size:42px;
+font-size:48px;
 margin-bottom:25px;
 
 }
@@ -216,46 +267,54 @@ color:#e63946;
 .about p{
 
 font-size:18px;
-color:#666;
 margin-bottom:18px;
 
 }
 
-.info{
+.stats{
 
 display:flex;
-gap:20px;
+gap:25px;
 margin-top:35px;
 flex-wrap:wrap;
 
 }
 
-.box{
+.stat{
 
-background:#fafafa;
-padding:20px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
 flex:1;
 min-width:170px;
 
+padding:25px;
+
+background:white;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
 }
 
-.box h3{
+.stat h3{
 
+font-size:34px;
 color:#e63946;
-font-size:28px;
 
 }
 
-/* =======================
+.stat span{
+
+color:#777;
+
+}
+
+/* ==========================
 Portfolio
-======================= */
+========================== */
 
 .portfolio{
 
-padding:120px 0;
-background:#fafafa;
+background:white;
 
 }
 
@@ -273,8 +332,8 @@ margin-top:60px;
 background:white;
 border-radius:25px;
 overflow:hidden;
-transition:.4s;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+transition:.35s;
 
 }
 
@@ -286,8 +345,8 @@ transform:translateY(-10px);
 
 .card img{
 
+height:260px;
 width:100%;
-height:250px;
 object-fit:cover;
 
 }
@@ -298,37 +357,30 @@ padding:25px;
 
 }
 
-.card h3{
+.card-content h3{
 
-margin-bottom:12px;
-
-}
-
-.card p{
-
-color:#666;
+margin-bottom:15px;
 
 }
 
 .tag{
 
 display:inline-block;
-margin-top:18px;
+margin-top:20px;
 padding:8px 18px;
-border-radius:40px;
 background:#e63946;
 color:white;
+border-radius:30px;
 font-size:14px;
 
 }
-
-/* =======================
+/* ==========================
 Services
-======================= */
+========================== */
 
 .services{
 
-padding:120px 0;
+background:#fafafa;
 
 }
 
@@ -343,19 +395,19 @@ margin-top:60px;
 
 .service{
 
-padding:40px;
 background:white;
+padding:40px;
 border-radius:25px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
+box-shadow:0 15px 40px rgba(0,0,0,.08);
 transition:.35s;
 
 }
 
 .service:hover{
 
+transform:translateY(-10px);
 background:#e63946;
 color:white;
-transform:translateY(-8px);
 
 }
 
@@ -365,21 +417,726 @@ color:white;
 
 }
 
+.service-icon{
+
+font-size:50px;
+margin-bottom:20px;
+
+}
+
 .service h3{
 
 margin-bottom:15px;
 
 }
 
-.service p{
+/* ==========================
+Pricing
+========================== */
 
-color:#666;
+.pricing{
+
+background:white;
 
 }
 
-.service i{
+.price-grid{
 
-font-size:40px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:35px;
+margin-top:60px;
+
+}
+
+.price-card{
+
+background:#fafafa;
+padding:45px 35px;
+border-radius:30px;
+text-align:center;
+position:relative;
+transition:.35s;
+
+box-shadow:0 15px 40px rgba(0,0,0,.07);
+
+}
+
+.price-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.popular{
+
+background:#e63946;
+color:white;
+
+}
+
+.popular p,
+.popular li{
+
+color:white;
+
+}
+
+.popular h3{
+
+color:white;
+
+}
+
+.badge-price{
+
+position:absolute;
+top:-15px;
+left:50%;
+transform:translateX(-50%);
+
+background:#111;
+color:white;
+padding:8px 18px;
+border-radius:50px;
+font-size:13px;
+
+}
+
+.price{
+
+font-size:46px;
+font-weight:700;
+margin:25px 0;
+
+}
+
+.price-card ul{
+
+list-style:none;
+margin:30px 0;
+
+}
+
+.price-card ul li{
+
+padding:10px 0;
+
+}
+
+/* ==========================
+Reviews
+========================== */
+
+.reviews{
+
+background:#fafafa;
+
+}
+
+.review-grid{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+margin-top:60px;
+
+}
+
+.review{
+
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.stars{
+
+color:#f4b400;
+font-size:20px;
+margin-bottom:15px;
+
+}
+
+.review h4{
+
+margin-top:20px;
+
+}
+
+/* ==========================
+CTA
+========================== */
+
+.cta{
+
+background:#111;
+color:white;
+text-align:center;
+
+}
+
+.cta h2{
+
+font-size:48px;
 margin-bottom:20px;
 
 }
+
+.cta p{
+
+color:#ddd;
+max-width:650px;
+margin:auto;
+margin-bottom:40px;
+
+}
+
+/* ==========================
+Contact
+========================== */
+
+.contact{
+
+padding:120px 0;
+
+}
+
+.contact-box{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+
+}
+
+.contact-info{
+
+background:#fafafa;
+padding:40px;
+border-radius:25px;
+
+}
+
+.contact-info h3{
+
+margin-bottom:25px;
+
+}
+
+.contact-info p{
+
+margin-bottom:15px;
+
+}
+
+.contact-form{
+
+display:flex;
+flex-direction:column;
+gap:20px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+padding:18px;
+border:1px solid #ddd;
+border-radius:15px;
+font-family:inherit;
+font-size:16px;
+
+}
+
+.contact-form textarea{
+
+height:180px;
+resize:none;
+
+}
+
+.contact-form button{
+
+border:none;
+cursor:pointer;
+
+}
+
+/* ==========================
+Footer
+========================== */
+
+footer{
+
+background:#e63946;
+color:white;
+padding:50px 0;
+text-align:center;
+
+}
+
+footer p{
+
+color:white;
+
+}
+
+/* ==========================
+Responsive
+========================== */
+
+@media(max-width:992px){
+
+.hero-content,
+.about-grid,
+.contact-box{
+
+grid-template-columns:1fr;
+
+}
+
+.cards,
+.service-grid,
+.price-grid,
+.review-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero{
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+nav{
+
+flex-direction:column;
+gap:20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.section-title{
+
+font-size:36px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+justify-content:center;
+gap:18px;
+
+}
+
+.stats{
+
+flex-direction:column;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+  <!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+Reels <span>by Vi</span>
+</div>
+
+<ul>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#portfolio">Portfolio</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#pricing">Pricing</a></li>
+
+<li><a href="#reviews">Reviews</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div>
+
+<h1>
+
+Every Moment <br>
+
+Deserves a <span>Reel.</span>
+
+</h1>
+
+<p>
+
+Professional cinematic Reels for Weddings,
+Events and Businesses.
+
+Creating memories you'll love to watch again.
+
+</p>
+
+<a href="#contact" class="btn">
+
+Book Your Reel
+
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="images/vika.jpg" alt="Vika">
+
+<div class="badge">
+
+<h4>2+ Years Experience</h4>
+
+<p>Content Creator & Reels Maker</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+<img src="images/vika.jpg" alt="Vika">
+
+<div>
+
+<h2 class="section-title">
+
+Hi, I'm <span>Vika.</span>
+
+</h2>
+
+<p>
+
+I'm a passionate <strong>Content Creator</strong> and
+<strong>Reels Maker</strong> with more than
+<strong>2 years of experience</strong> creating
+high-quality short-form videos.
+
+</p>
+
+<p>
+
+I help couples, brands and businesses turn
+their most important moments into beautiful,
+dynamic and engaging Reels that people love to
+watch and share.
+
+</p>
+
+<p>
+
+Whether it's your wedding day, birthday,
+corporate event or business content,
+my goal is to create videos that tell your
+story in the most creative way possible.
+
+</p>
+
+<div class="stats">
+
+<div class="stat">
+
+<h3>2+</h3>
+
+<span>Years Experience</span>
+
+</div>
+
+<div class="stat">
+
+<h3>100+</h3>
+
+<span>Reels Created</span>
+
+</div>
+
+<div class="stat">
+
+<h3>50+</h3>
+
+<span>Happy Clients</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- ================= PORTFOLIO ================= -->
+
+<section class="portfolio" id="portfolio">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Featured <span>Projects</span>
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="images/slg.jpg" alt="SLG Wedding Show">
+
+<div class="card-content">
+
+<h3>SLG Wedding Show</h3>
+
+<p>
+
+Official wedding event coverage.
+
+Created cinematic and emotional Reels
+throughout the event.
+
+</p>
+
+<span class="tag">
+
+Wedding Event
+
+</span>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="images/wedding.jpg" alt="Wedding">
+
+<div class="card-content">
+
+<h3>Wedding Reel</h3>
+
+<p>
+
+Capturing every beautiful moment from
+morning preparations to the cake ceremony.
+
+</p>
+
+<span class="tag">
+
+Wedding
+
+</span>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="images/business.jpg" alt="Business">
+
+<div class="card-content">
+
+<h3>Business Content</h3>
+
+<p>
+
+Dynamic promotional Reels for brands,
+restaurants, beauty salons and personal
+businesses.
+
+</p>
+
+<span class="tag">
+
+Business
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<h2 class="section-title">
+
+My <span>Services</span>
+
+</h2>
+
+<div class="service-grid">
+
+<div class="service">
+
+<div class="service-icon">
+
+💍
+
+</div>
+
+<h3>
+
+Wedding Reels
+
+</h3>
+
+<p>
+
+Beautiful cinematic Reels covering your
+entire wedding day from morning preparations
+to the cake ceremony.
+
+</p>
+
+</div>
+
+
+
+<div class="service">
+
+<div class="service-icon">
+
+🎉
+
+</div>
+
+<h3>
+
+Events & Birthdays
+
+</h3>
+
+<p>
+
+Dynamic content for birthdays,
+engagements, corporate events,
+baby showers and private celebrations.
+
+</p>
+
+</div>
+
+
+
+<div class="service">
+
+<div class="service-icon">
+
+🚀
+
+</div>
+
+<h3>
+
+Business Reels
+
+</h3>
+
+<p>
+
+Creative promotional videos for
+restaurants, cafes, beauty salons,
+shops and personal brands.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>

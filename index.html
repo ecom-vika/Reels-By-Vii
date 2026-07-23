@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Reels by Vi | Content Creator</title>
+<title>Reels by Vi</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -21,62 +20,30 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 
 font-family:'Outfit',sans-serif;
-background:#ffffff;
-color:#222;
+background:#fff;
+color:#111;
 overflow-x:hidden;
+
+}
+
+html{
+
+scroll-behavior:smooth;
 
 }
 
 .container{
 
 width:90%;
-max-width:1200px;
+max-width:1400px;
 margin:auto;
 
 }
 
-section{
-
-padding:110px 0;
-
-}
-
-img{
-
-max-width:100%;
-display:block;
-
-}
-
-a{
-
-text-decoration:none;
-
-}
-
-h1,h2,h3,h4{
-
-font-weight:700;
-
-}
-
-p{
-
-color:#666;
-line-height:1.8;
-
-}
-
-/* ==========================
-HEADER
-========================== */
+/* HEADER */
 
 header{
 
@@ -86,7 +53,9 @@ left:0;
 width:100%;
 background:#111;
 padding:22px 0;
-z-index:9999;
+z-index:999;
+
+backdrop-filter:blur(20px);
 
 }
 
@@ -100,47 +69,52 @@ align-items:center;
 
 .logo{
 
-font-size:30px;
-font-weight:800;
-color:#fff;
+font-size:32px;
+font-weight:700;
+color:white;
+letter-spacing:2px;
 
 }
 
 .logo span{
 
-color:#e63946;
+color:#d72638;
 
 }
 
 nav ul{
 
 display:flex;
+gap:45px;
 list-style:none;
-gap:35px;
 
 }
 
-nav ul li a{
+nav a{
 
 color:white;
+text-decoration:none;
 font-weight:500;
 transition:.35s;
 
 }
 
-nav ul li a:hover{
+nav a:hover{
 
-color:#e63946;
+color:#d72638;
 
 }
 
-/* ==========================
-Hero
-========================== */
+/* HERO */
 
 .hero{
 
-padding-top:190px;
+min-height:100vh;
+
+display:flex;
+align-items:center;
+
+padding-top:120px;
 
 }
 
@@ -148,47 +122,66 @@ padding-top:190px;
 
 display:grid;
 grid-template-columns:1fr 1fr;
-align-items:center;
 gap:80px;
+align-items:center;
+
+}
+
+.hero small{
+
+letter-spacing:6px;
+text-transform:uppercase;
+color:#d72638;
 
 }
 
 .hero h1{
 
-font-size:68px;
-line-height:1.1;
-margin-bottom:25px;
+font-family:'Cormorant Garamond',serif;
 
-}
+font-size:95px;
 
-.hero h1 span{
+line-height:0.95;
 
-color:#e63946;
+margin:25px 0;
+
+font-weight:700;
 
 }
 
 .hero p{
 
 font-size:20px;
-margin-bottom:40px;
+color:#666;
+max-width:520px;
+margin-bottom:45px;
 
 }
 
 .btn{
 
 display:inline-block;
-padding:18px 42px;
-border-radius:50px;
-background:#e63946;
+
+padding:18px 45px;
+
+background:#d72638;
+
 color:white;
+
+border-radius:50px;
+
+text-decoration:none;
+
 font-weight:600;
-transition:.35s;
+
+transition:.4s;
 
 }
 
 .btn:hover{
 
 background:#111;
+
 transform:translateY(-6px);
 
 }
@@ -201,560 +194,62 @@ position:relative;
 
 .hero-image img{
 
-border-radius:30px;
-box-shadow:0 25px 50px rgba(0,0,0,.18);
+width:100%;
+border-radius:35px;
+
+box-shadow:0 30px 70px rgba(0,0,0,.18);
 
 }
 
-.badge{
+.floating{
 
 position:absolute;
-bottom:20px;
-left:-20px;
+
+right:-40px;
+
+bottom:40px;
 
 background:white;
-padding:18px 25px;
-border-radius:20px;
-
-box-shadow:0 15px 40px rgba(0,0,0,.15);
-
-}
-
-.badge h4{
-
-color:#e63946;
-
-}
-
-/* ==========================
-About
-========================== */
-
-.about{
-
-background:#fafafa;
-
-}
-
-.about-grid{
-
-display:grid;
-grid-template-columns:420px 1fr;
-gap:70px;
-align-items:center;
-
-}
-
-.about img{
-
-border-radius:30px;
-
-}
-
-.section-title{
-
-font-size:48px;
-margin-bottom:25px;
-
-}
-
-.section-title span{
-
-color:#e63946;
-
-}
-
-.about p{
-
-font-size:18px;
-margin-bottom:18px;
-
-}
-
-.stats{
-
-display:flex;
-gap:25px;
-margin-top:35px;
-flex-wrap:wrap;
-
-}
-
-.stat{
-
-flex:1;
-min-width:170px;
 
 padding:25px;
 
-background:white;
+border-radius:25px;
 
-border-radius:20px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+box-shadow:0 20px 50px rgba(0,0,0,.15);
 
 }
 
-.stat h3{
+.floating h3{
 
-font-size:34px;
-color:#e63946;
+font-size:38px;
+
+color:#d72638;
 
 }
 
-.stat span{
+.floating span{
 
 color:#777;
 
 }
 
-/* ==========================
-Portfolio
-========================== */
-
-.portfolio{
-
-background:white;
-
-}
-
-.cards{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-margin-top:60px;
-
-}
-
-.card{
-
-background:white;
-border-radius:25px;
-overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-transition:.35s;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-
-}
-
-.card img{
-
-height:260px;
-width:100%;
-object-fit:cover;
-
-}
-
-.card-content{
-
-padding:25px;
-
-}
-
-.card-content h3{
-
-margin-bottom:15px;
-
-}
-
-.tag{
-
-display:inline-block;
-margin-top:20px;
-padding:8px 18px;
-background:#e63946;
-color:white;
-border-radius:30px;
-font-size:14px;
-
-}
-/* ==========================
-Services
-========================== */
-
-.services{
-
-background:#fafafa;
-
-}
-
-.service-grid{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-margin-top:60px;
-
-}
-
-.service{
-
-background:white;
-padding:40px;
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-transition:.35s;
-
-}
-
-.service:hover{
-
-transform:translateY(-10px);
-background:#e63946;
-color:white;
-
-}
-
-.service:hover p{
-
-color:white;
-
-}
-
-.service-icon{
-
-font-size:50px;
-margin-bottom:20px;
-
-}
-
-.service h3{
-
-margin-bottom:15px;
-
-}
-
-/* ==========================
-Pricing
-========================== */
-
-.pricing{
-
-background:white;
-
-}
-
-.price-grid{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:35px;
-margin-top:60px;
-
-}
-
-.price-card{
-
-background:#fafafa;
-padding:45px 35px;
-border-radius:30px;
-text-align:center;
-position:relative;
-transition:.35s;
-
-box-shadow:0 15px 40px rgba(0,0,0,.07);
-
-}
-
-.price-card:hover{
-
-transform:translateY(-10px);
-
-}
-
-.popular{
-
-background:#e63946;
-color:white;
-
-}
-
-.popular p,
-.popular li{
-
-color:white;
-
-}
-
-.popular h3{
-
-color:white;
-
-}
-
-.badge-price{
+.scroll{
 
 position:absolute;
-top:-15px;
+
+bottom:30px;
+
 left:50%;
+
 transform:translateX(-50%);
 
-background:#111;
-color:white;
-padding:8px 18px;
-border-radius:50px;
-font-size:13px;
+font-size:14px;
 
-}
+letter-spacing:3px;
 
-.price{
+text-transform:uppercase;
 
-font-size:46px;
-font-weight:700;
-margin:25px 0;
-
-}
-
-.price-card ul{
-
-list-style:none;
-margin:30px 0;
-
-}
-
-.price-card ul li{
-
-padding:10px 0;
-
-}
-
-/* ==========================
-Reviews
-========================== */
-
-.reviews{
-
-background:#fafafa;
-
-}
-
-.review-grid{
-
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:30px;
-margin-top:60px;
-
-}
-
-.review{
-
-background:white;
-padding:35px;
-border-radius:25px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-}
-
-.stars{
-
-color:#f4b400;
-font-size:20px;
-margin-bottom:15px;
-
-}
-
-.review h4{
-
-margin-top:20px;
-
-}
-
-/* ==========================
-CTA
-========================== */
-
-.cta{
-
-background:#111;
-color:white;
-text-align:center;
-
-}
-
-.cta h2{
-
-font-size:48px;
-margin-bottom:20px;
-
-}
-
-.cta p{
-
-color:#ddd;
-max-width:650px;
-margin:auto;
-margin-bottom:40px;
-
-}
-
-/* ==========================
-Contact
-========================== */
-
-.contact{
-
-padding:120px 0;
-
-}
-
-.contact-box{
-
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-
-}
-
-.contact-info{
-
-background:#fafafa;
-padding:40px;
-border-radius:25px;
-
-}
-
-.contact-info h3{
-
-margin-bottom:25px;
-
-}
-
-.contact-info p{
-
-margin-bottom:15px;
-
-}
-
-.contact-form{
-
-display:flex;
-flex-direction:column;
-gap:20px;
-
-}
-
-.contact-form input,
-.contact-form textarea{
-
-padding:18px;
-border:1px solid #ddd;
-border-radius:15px;
-font-family:inherit;
-font-size:16px;
-
-}
-
-.contact-form textarea{
-
-height:180px;
-resize:none;
-
-}
-
-.contact-form button{
-
-border:none;
-cursor:pointer;
-
-}
-
-/* ==========================
-Footer
-========================== */
-
-footer{
-
-background:#e63946;
-color:white;
-padding:50px 0;
-text-align:center;
-
-}
-
-footer p{
-
-color:white;
-
-}
-
-/* ==========================
-Responsive
-========================== */
-
-@media(max-width:992px){
-
-.hero-content,
-.about-grid,
-.contact-box{
-
-grid-template-columns:1fr;
-
-}
-
-.cards,
-.service-grid,
-.price-grid,
-.review-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.hero{
-
-text-align:center;
-
-}
-
-.hero h1{
-
-font-size:52px;
-
-}
-
-nav{
-
-flex-direction:column;
-gap:20px;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.hero h1{
-
-font-size:40px;
-
-}
-
-.section-title{
-
-font-size:36px;
-
-}
-
-nav ul{
-
-flex-wrap:wrap;
-justify-content:center;
-gap:18px;
-
-}
-
-.stats{
-
-flex-direction:column;
-
-}
+color:#999;
 
 }
 
@@ -763,7 +258,6 @@ flex-direction:column;
 </head>
 
 <body>
-  <!-- ================= HEADER ================= -->
 
 <header>
 
@@ -772,22 +266,22 @@ flex-direction:column;
 <nav>
 
 <div class="logo">
+
 Reels <span>by Vi</span>
+
 </div>
 
 <ul>
 
-<li><a href="#about">About</a></li>
+<li><a href="#">About</a></li>
 
-<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#">Portfolio</a></li>
 
-<li><a href="#services">Services</a></li>
+<li><a href="#">Pricing</a></li>
 
-<li><a href="#pricing">Pricing</a></li>
+<li><a href="#">Reviews</a></li>
 
-<li><a href="#reviews">Reviews</a></li>
-
-<li><a href="#contact">Contact</a></li>
+<li><a href="#">Contact</a></li>
 
 </ul>
 
@@ -797,10 +291,6 @@ Reels <span>by Vi</span>
 
 </header>
 
-
-
-<!-- ================= HERO ================= -->
-
 <section class="hero">
 
 <div class="container">
@@ -809,24 +299,25 @@ Reels <span>by Vi</span>
 
 <div>
 
+<small>CONTENT CREATOR</small>
+
 <h1>
 
-Every Moment <br>
+Every Story<br>
 
-Deserves a <span>Reel.</span>
+Deserves<br>
+
+a Beautiful Reel.
 
 </h1>
 
 <p>
 
-Professional cinematic Reels for Weddings,
-Events and Businesses.
-
-Creating memories you'll love to watch again.
+Wedding Reels, Event Highlights and Dynamic Business Content that turns moments into unforgettable memories.
 
 </p>
 
-<a href="#contact" class="btn">
+<a href="#" class="btn">
 
 Book Your Reel
 
@@ -836,74 +327,9 @@ Book Your Reel
 
 <div class="hero-image">
 
-<img src="images/vika.jpg" alt="Vika">
+<img src="images/vika.jpg">
 
-<div class="badge">
-
-<h4>2+ Years Experience</h4>
-
-<p>Content Creator & Reels Maker</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= ABOUT ================= -->
-
-<section class="about" id="about">
-
-<div class="container">
-
-<div class="about-grid">
-
-<img src="images/vika.jpg" alt="Vika">
-
-<div>
-
-<h2 class="section-title">
-
-Hi, I'm <span>Vika.</span>
-
-</h2>
-
-<p>
-
-I'm a passionate <strong>Content Creator</strong> and
-<strong>Reels Maker</strong> with more than
-<strong>2 years of experience</strong> creating
-high-quality short-form videos.
-
-</p>
-
-<p>
-
-I help couples, brands and businesses turn
-their most important moments into beautiful,
-dynamic and engaging Reels that people love to
-watch and share.
-
-</p>
-
-<p>
-
-Whether it's your wedding day, birthday,
-corporate event or business content,
-my goal is to create videos that tell your
-story in the most creative way possible.
-
-</p>
-
-<div class="stats">
-
-<div class="stat">
+<div class="floating">
 
 <h3>2+</h3>
 
@@ -911,7 +337,62 @@ story in the most creative way possible.
 
 </div>
 
-<div class="stat">
+</div>
+
+</div>
+
+</div>
+
+<div class="scroll">
+
+SCROLL
+
+</div>
+
+</section><!-- ================= ABOUT ================= -->
+
+<section class="about">
+
+<div class="container about-grid">
+
+<div class="about-image">
+
+<img src="images/vika.jpg" alt="Vika">
+
+</div>
+
+<div class="about-text">
+
+<small>ABOUT ME</small>
+
+<h2>
+
+Hi,<br>
+
+I'm <span>Vika.</span>
+
+</h2>
+
+<p>
+
+I'm a passionate <strong>Content Creator</strong> and
+<strong>Reels Maker</strong> with over <strong>2 years of experience</strong>
+creating elegant short-form videos that help people and businesses tell
+their story in the most beautiful way.
+
+</p>
+
+<p>
+
+From luxury weddings to business campaigns,
+I focus on creating emotional, dynamic and modern Reels that people love
+to watch again and again.
+
+</p>
+
+<div class="about-info">
+
+<div>
 
 <h3>100+</h3>
 
@@ -919,7 +400,7 @@ story in the most creative way possible.
 
 </div>
 
-<div class="stat">
+<div>
 
 <h3>50+</h3>
 
@@ -927,6 +408,12 @@ story in the most creative way possible.
 
 </div>
 
+<div>
+
+<h3>2+</h3>
+
+<span>Years Experience</span>
+
 </div>
 
 </div>
@@ -939,98 +426,156 @@ story in the most creative way possible.
 
 
 
+<!-- ================= MARQUEE ================= -->
 
-<!-- ================= PORTFOLIO ================= -->
+<section class="marquee">
 
-<section class="portfolio" id="portfolio">
+<div class="track">
+
+Wedding Reels •
+
+Business Content •
+
+Events •
+
+Luxury Weddings •
+
+Content Creator •
+
+Reels by Vi •
+
+Wedding Reels •
+
+Business Content •
+
+Events •
+
+Luxury Weddings •
+
+</div>
+
+</section>
+
+
+
+
+<!-- ================= FEATURED PROJECT ================= -->
+
+<section class="featured">
 
 <div class="container">
 
-<h2 class="section-title">
+<div class="featured-grid">
 
-Featured <span>Projects</span>
+<div class="featured-image">
+
+<img src="images/slg.jpg">
+
+</div>
+
+<div class="featured-text">
+
+<small>FEATURED PROJECT</small>
+
+<h2>
+
+SLG Wedding Show
 
 </h2>
 
-<div class="cards">
-
-<div class="card">
-
-<img src="images/slg.jpg" alt="SLG Wedding Show">
-
-<div class="card-content">
-
-<h3>SLG Wedding Show</h3>
-
 <p>
 
-Official wedding event coverage.
-
-Created cinematic and emotional Reels
-throughout the event.
+One of my favorite projects where I captured
+the emotions, elegance and unforgettable moments
+through cinematic Reels.
 
 </p>
 
-<span class="tag">
-
-Wedding Event
-
-</span>
-
-</div>
-
-</div>
-
-
-
-<div class="card">
-
-<img src="images/wedding.jpg" alt="Wedding">
-
-<div class="card-content">
-
-<h3>Wedding Reel</h3>
-
 <p>
 
-Capturing every beautiful moment from
-morning preparations to the cake ceremony.
+Every detail was filmed with creativity,
+movement and storytelling to create engaging
+content for social media.
 
 </p>
 
-<span class="tag">
+<a href="#" class="btn">
 
-Wedding
+View Portfolio
 
-</span>
+</a>
+
+</div>
 
 </div>
 
 </div>
 
+</section>
+<!-- ================= ABOUT ================= -->
 
+<section class="about">
 
-<div class="card">
+<div class="container about-grid">
 
-<img src="images/business.jpg" alt="Business">
+<div class="about-image">
 
-<div class="card-content">
+<img src="images/vika.jpg" alt="Vika">
 
-<h3>Business Content</h3>
+</div>
+
+<div class="about-text">
+
+<small>ABOUT ME</small>
+
+<h2>
+
+Hi,<br>
+
+I'm <span>Vika.</span>
+
+</h2>
 
 <p>
 
-Dynamic promotional Reels for brands,
-restaurants, beauty salons and personal
-businesses.
+I'm a passionate <strong>Content Creator</strong> and
+<strong>Reels Maker</strong> with over <strong>2 years of experience</strong>
+creating elegant short-form videos that help people and businesses tell
+their story in the most beautiful way.
 
 </p>
 
-<span class="tag">
+<p>
 
-Business
+From luxury weddings to business campaigns,
+I focus on creating emotional, dynamic and modern Reels that people love
+to watch again and again.
 
-</span>
+</p>
+
+<div class="about-info">
+
+<div>
+
+<h3>100+</h3>
+
+<span>Reels Created</span>
+
+</div>
+
+<div>
+
+<h3>50+</h3>
+
+<span>Happy Clients</span>
+
+</div>
+
+<div>
+
+<h3>2+</h3>
+
+<span>Years Experience</span>
 
 </div>
 
@@ -1044,94 +589,84 @@ Business
 
 
 
+<!-- ================= MARQUEE ================= -->
 
-<!-- ================= SERVICES ================= -->
+<section class="marquee">
 
-<section class="services" id="services">
+<div class="track">
+
+Wedding Reels •
+
+Business Content •
+
+Events •
+
+Luxury Weddings •
+
+Content Creator •
+
+Reels by Vi •
+
+Wedding Reels •
+
+Business Content •
+
+Events •
+
+Luxury Weddings •
+
+</div>
+
+</section>
+
+
+
+
+<!-- ================= FEATURED PROJECT ================= -->
+
+<section class="featured">
 
 <div class="container">
 
-<h2 class="section-title">
+<div class="featured-grid">
 
-My <span>Services</span>
+<div class="featured-image">
+
+<img src="images/slg.jpg">
+
+</div>
+
+<div class="featured-text">
+
+<small>FEATURED PROJECT</small>
+
+<h2>
+
+SLG Wedding Show
 
 </h2>
 
-<div class="service-grid">
-
-<div class="service">
-
-<div class="service-icon">
-
-💍
-
-</div>
-
-<h3>
-
-Wedding Reels
-
-</h3>
-
 <p>
 
-Beautiful cinematic Reels covering your
-entire wedding day from morning preparations
-to the cake ceremony.
+One of my favorite projects where I captured
+the emotions, elegance and unforgettable moments
+through cinematic Reels.
 
 </p>
 
-</div>
-
-
-
-<div class="service">
-
-<div class="service-icon">
-
-🎉
-
-</div>
-
-<h3>
-
-Events & Birthdays
-
-</h3>
-
 <p>
 
-Dynamic content for birthdays,
-engagements, corporate events,
-baby showers and private celebrations.
+Every detail was filmed with creativity,
+movement and storytelling to create engaging
+content for social media.
 
 </p>
 
-</div>
+<a href="#" class="btn">
 
+View Portfolio
 
-
-<div class="service">
-
-<div class="service-icon">
-
-🚀
-
-</div>
-
-<h3>
-
-Business Reels
-
-</h3>
-
-<p>
-
-Creative promotional videos for
-restaurants, cafes, beauty salons,
-shops and personal brands.
-
-</p>
+</a>
 
 </div>
 
@@ -1140,3 +675,188 @@ shops and personal brands.
 </div>
 
 </section>
+/* ABOUT */
+
+.about{
+
+padding:150px 0;
+
+}
+
+.about-grid{
+
+display:grid;
+
+grid-template-columns:500px 1fr;
+
+gap:90px;
+
+align-items:center;
+
+}
+
+.about-image img{
+
+border-radius:35px;
+
+box-shadow:0 30px 70px rgba(0,0,0,.15);
+
+}
+
+.about small{
+
+letter-spacing:4px;
+
+color:#d72638;
+
+}
+
+.about h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:75px;
+
+margin:20px 0;
+
+}
+
+.about h2 span{
+
+color:#d72638;
+
+}
+
+.about p{
+
+font-size:19px;
+
+color:#666;
+
+margin-bottom:20px;
+
+}
+
+.about-info{
+
+display:flex;
+
+gap:35px;
+
+margin-top:40px;
+
+}
+
+.about-info div h3{
+
+font-size:42px;
+
+color:#d72638;
+
+}
+
+.about-info span{
+
+color:#888;
+
+}
+
+
+/* MARQUEE */
+
+.marquee{
+
+background:#111;
+
+overflow:hidden;
+
+padding:30px 0;
+
+}
+
+.track{
+
+white-space:nowrap;
+
+font-size:40px;
+
+color:white;
+
+font-family:'Cormorant Garamond',serif;
+
+animation:move 18s linear infinite;
+
+}
+
+@keyframes move{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+100%{
+
+transform:translateX(-50%);
+
+}
+
+}
+
+
+/* FEATURED */
+
+.featured{
+
+padding:170px 0;
+
+}
+
+.featured-grid{
+
+display:grid;
+
+grid-template-columns:1.2fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.featured-image img{
+
+border-radius:35px;
+
+box-shadow:0 30px 70px rgba(0,0,0,.15);
+
+}
+
+.featured small{
+
+letter-spacing:4px;
+
+color:#d72638;
+
+}
+
+.featured h2{
+
+font-size:70px;
+
+font-family:'Cormorant Garamond',serif;
+
+margin:20px 0;
+
+}
+
+.featured p{
+
+font-size:18px;
+
+color:#666;
+
+margin-bottom:22px;
+
+}

@@ -311,6 +311,162 @@
             60% { transform: translateX(-50%) translateY(-5px); }
         }
 
+        /* ===== About Section ===== */
+        .about {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .about::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 25px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(201,169,110,0.4);
+            text-align: center;
+        }
+
+        .about-badge-number {
+            font-size: 36px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .about-badge-text {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        .about-content {
+            padding: 20px 0;
+        }
+
+        .about-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .about-content h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+
+        .about-content h2 span {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .about-content p {
+            font-size: 17px;
+            color: var(--gray);
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
         /* ===== Portfolio Section ===== */
         .portfolio {
             background: var(--white);
@@ -1166,6 +1322,8 @@
             justify-content: center;
             text-decoration: none;
             transition: all 0.3s;
+            font-size: 14px;
+            font-weight: 600;
         }
 
         .social-link:hover {
@@ -1239,6 +1397,15 @@
                 padding: 0 30px;
             }
 
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .about-image {
+                height: 500px;
+            }
+
             .pricing-container {
                 grid-template-columns: 1fr;
             }
@@ -1309,6 +1476,20 @@
             .section-padding {
                 padding: 80px 0;
             }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .about-badge {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .testimonial-card {
+                padding: 40px 25px;
+            }
         }
 
         /* ===== Loading Animation ===== */
@@ -1354,6 +1535,7 @@
             <a href="#" class="logo">Reels by Vi</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#pricing">Pricing</a></li>
@@ -1373,7 +1555,7 @@
         <div class="hero-bg"></div>
         <div class="hero-content">
             <p class="hero-subtitle">Content Creator & Reels Maker</p>
-            <h1>Creating <span>Stunning</span> Visual Stories</h1>
+            <h1>The Art of <span>Visual</span> Impact</h1>
             <p class="hero-text">Transform your moments into captivating reels that engage, inspire, and leave a lasting impression.</p>
             <div class="cta-group">
                 <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
@@ -1384,6 +1566,45 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 5v14M19 12l-7 7-7-7"/>
             </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image-wrapper reveal">
+                    <div class="about-image">
+                        <!-- Տեղադրիր քո նկարը այստեղ -->
+                        <img src="your-photo.jpg" alt="Vika - Reels by Vi">
+                    </div>
+                    <div class="about-badge">
+                        <div class="about-badge-number">2+</div>
+                        <div class="about-badge-text">Years Experience</div>
+                    </div>
+                </div>
+                <div class="about-content reveal">
+                    <div class="about-label">About Me</div>
+                    <h2>Hi, I'm <span>Vika</span></h2>
+                    <p>I'm a passionate Content Creator and Reels Maker with over 2 years of experience in the industry. My mission is to help people preserve their most beautiful memories through stunning visual storytelling on social media.</p>
+                    <p>I specialize in creating dynamic, stylish, and engaging reels that capture the essence of your special moments — from weddings and birthdays to corporate events and personal brands.</p>
+                    <p>My work is all about turning your moments into unforgettable, stylish, and captivating visual stories.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2+</div>
+                            <div class="stat-label">Years</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1476,10 +1697,10 @@
                     <div class="service-price">39,900 ֏ <span>full package</span></div>
                 </div>
                 <div class="service-card reveal">
-                    <div class="service-icon"></div>
+                    <div class="service-icon">🥳</div>
                     <h3>Events & Celebrations</h3>
                     <p>Professional coverage for birthdays, corporate events, and special occasions with customizable packages.</p>
-                    <div class="service-price">15,000  <span>per hour</span></div>
+                    <div class="service-price">15,000 ֏ <span>per hour</span></div>
                 </div>
             </div>
         </div>
@@ -1526,7 +1747,7 @@
                         <div class="checkbox-group">
                             <div class="checkbox-item">
                                 <input type="checkbox" id="editing" data-price="5000">
-                                <label for="editing">Advanced Editing (+5,000 ֏)</label>
+                                <label for="editing">Advanced Editing (+5,000 )</label>
                                 <span class="checkbox-price">5,000 ֏</span>
                             </div>
                             <div class="checkbox-item">
@@ -1622,7 +1843,7 @@
         <div class="container">
             <div class="section-header reveal">
                 <h2>Our Process</h2>
-                <p>From concept to delivery, here's how we bring your vision to life.</p>
+                <p>From concept to final result, here's how we bring your vision to life.</p>
             </div>
             <div class="process-timeline">
                 <div class="process-step reveal">
@@ -1644,11 +1865,6 @@
                     <div class="process-icon">🎬</div>
                     <h3>Production</h3>
                     <p>Professional filming and content creation</p>
-                </div>
-                <div class="process-step reveal">
-                    <div class="process-icon">✨</div>
-                    <h3>Delivery</h3>
-                    <p>Final edits and project delivery</p>
                 </div>
             </div>
         </div>
@@ -1765,7 +1981,7 @@
                         </div>
                     </div>
                     <div class="info-card">
-                        <div class="info-icon">📍</div>
+                        <div class="info-icon"></div>
                         <div class="info-content">
                             <h3>Location</h3>
                             <p>Yerevan, Armenia</p>
@@ -1802,6 +2018,7 @@
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -1921,6 +2138,11 @@
             });
         }
 
+        // Auto-advance testimonials
+        setInterval(() => {
+            changeTestimonial(1);
+        }, 6000);
+
         // Gallery Filter
         function filterGallery(category) {
             const items = document.querySelectorAll('.gallery-item');
@@ -1987,4 +2209,4 @@
         });
     </script>
 </body>
-</html>   
+</html>

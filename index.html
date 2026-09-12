@@ -414,6 +414,13 @@
             color: var(--accent-dark);
         }
 
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
         /* ============================================
            INTRO / PERSONAL SECTION
            ============================================ */
@@ -452,7 +459,6 @@
             transform: scale(1.03);
         }
 
-        /* Fallback when photo not loaded */
         .intro-image-fallback {
             width: 100%;
             height: 100%;
@@ -609,7 +615,7 @@
         }
 
         /* ============================================
-           PORTFOLIO / MY PAGE SECTION
+           PORTFOLIO SECTION
            ============================================ */
         .portfolio {
             background: var(--bg);
@@ -738,6 +744,366 @@
 
         .project-btn:hover svg {
             transform: translateX(4px);
+        }
+
+        /* ============================================
+           PRICING SECTION
+           ============================================ */
+        .pricing {
+            background: var(--bg-alt);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-header .section-label {
+            justify-content: center;
+        }
+
+        .pricing-header .section-label::before { display: none; }
+
+        /* Toggle */
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .toggle-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .toggle-label.active {
+            color: var(--text-primary);
+        }
+
+        .toggle-switch {
+            width: 56px;
+            height: 30px;
+            background: var(--border-strong);
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .toggle-switch.active {
+            background: var(--accent-dark);
+        }
+
+        .toggle-knob {
+            width: 24px;
+            height: 24px;
+            background: var(--bg-card);
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .toggle-switch.active .toggle-knob {
+            left: 29px;
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .pricing-card.featured {
+            background: var(--text-primary);
+            color: var(--bg);
+            border-color: var(--text-primary);
+            transform: scale(1.04);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.04) translateY(-8px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 6px 14px;
+            background: var(--accent);
+            color: var(--text-primary);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 50px;
+        }
+
+        .pricing-card-header {
+            padding: 36px 32px 24px;
+        }
+
+        .package-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--accent-dark);
+            margin-bottom: 20px;
+        }
+
+        .pricing-card.featured .package-icon {
+            background: rgba(168, 197, 214, 0.15);
+            color: var(--accent);
+        }
+
+        .package-name {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .package-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .pricing-card.featured .package-desc {
+            color: rgba(245, 240, 232, 0.6);
+        }
+
+        .pricing-card-body {
+            padding: 0 32px 36px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-block {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-card.featured .price-block {
+            border-bottom-color: rgba(245, 240, 232, 0.15);
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .pricing-card.featured .currency {
+            color: rgba(245, 240, 232, 0.7);
+        }
+
+        .amount {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .period {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .pricing-card.featured .period {
+            color: rgba(245, 240, 232, 0.6);
+        }
+
+        .period-monthly { display: none; }
+        .period-onetime { display: inline; }
+
+        body.monthly .period-monthly { display: inline; }
+        body.monthly .period-onetime { display: none; }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 32px;
+            flex: 1;
+        }
+
+        .feature-list li {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 400;
+        }
+
+        .pricing-card.featured .feature-list li {
+            color: rgba(245, 240, 232, 0.85);
+        }
+
+        .feature-list li.disabled {
+            color: var(--text-muted);
+            opacity: 0.5;
+        }
+
+        .pricing-card.featured .feature-list li.disabled {
+            color: rgba(245, 240, 232, 0.4);
+        }
+
+        .check {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            color: var(--accent-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .pricing-card.featured .check {
+            background: rgba(168, 197, 214, 0.15);
+            color: var(--accent);
+        }
+
+        .feature-list li.disabled .check {
+            background: var(--border);
+            color: var(--text-muted);
+        }
+
+        .pricing-card.featured .feature-list li.disabled .check {
+            background: rgba(245, 240, 232, 0.08);
+            color: rgba(245, 240, 232, 0.4);
+        }
+
+        .package-btn {
+            display: block;
+            text-align: center;
+            padding: 16px;
+            background: var(--text-primary);
+            color: var(--bg);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .package-btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .featured-btn {
+            background: var(--bg);
+            color: var(--text-primary);
+        }
+
+        .featured-btn:hover {
+            background: var(--accent);
+            color: var(--text-primary);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            margin-top: 120px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .step-item {
+            text-align: center;
+            padding: 40px 24px;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .step-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .step-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--accent-dark);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .step-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .step-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            line-height: 1.7;
         }
 
         /* ============================================
@@ -900,6 +1266,10 @@
             .intro-grid { gap: 50px; }
             .about-grid { gap: 60px; }
             .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-card.featured { transform: scale(1); }
+            .pricing-card.featured:hover { transform: translateY(-8px); }
+            .steps-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -929,6 +1299,7 @@
             }
 
             .portfolio-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
 
             .footer { padding: 40px 24px 24px; }
             .footer-top { flex-direction: column; text-align: center; }
@@ -939,8 +1310,9 @@
         }
 
         @media (max-width: 480px) {
-            .hero-cta, .contact-cta { width: 100%; justify-content: center; }
+            .hero-cta, .contact-cta, .package-btn { width: 100%; justify-content: center; }
             .project-content { padding: 24px; }
+            .pricing-toggle { flex-direction: column; gap: 12px; }
         }
     </style>
 </head>
@@ -955,6 +1327,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#portfolio">My Page</a></li>
+            <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact" class="nav-cta">Contact</a></li>
         </ul>
         <div class="hamburger" id="hamburger">
@@ -969,6 +1342,7 @@
         <a href="#home" onclick="closeMobile()">Home</a>
         <a href="#about" onclick="closeMobile()">About</a>
         <a href="#portfolio" onclick="closeMobile()">My Page</a>
+        <a href="#pricing" onclick="closeMobile()">Pricing</a>
         <a href="#contact" onclick="closeMobile()">Contact</a>
     </div>
 
@@ -980,7 +1354,7 @@
         <div class="hero-bg-shape hero-shape-2"></div>
 
         <div class="hero-content">
-            <div class="hero-eyebrow">Shopify Specialist · 2026</div>
+            <div class="hero-eyebrow">SHOPIFY SPECIALIST · 2026</div>
             <h1 class="hero-title">
                 Vika<br>
                 <span class="italic">Shopify</span> Specialist
@@ -1010,7 +1384,7 @@
             <div class="intro-grid">
                 <div class="intro-image-wrapper reveal">
                     <div class="intro-image">
-                        <!-- REPLACE THE SRC BELOW WITH YOUR PHOTO PATH -->
+                        <!-- REPLACE WITH YOUR PHOTO -->
                         <img src="vika-photo.jpg" alt="Vika — Shopify Specialist"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="intro-image-fallback" style="display:none;">V</div>
@@ -1091,7 +1465,7 @@
             </div>
 
             <div class="portfolio-grid">
-                <!-- Project 1: Portfolio Website -->
+                <!-- Project 1 -->
                 <div class="project-card reveal reveal-delay-1">
                     <div class="project-thumb project-thumb-1">
                         <div class="project-thumb-inner">01</div>
@@ -1100,7 +1474,6 @@
                         <div class="project-category">Portfolio</div>
                         <h3 class="project-title">Portfolio Website</h3>
                         <p class="project-subtitle">Website design & development</p>
-                        <!-- REPLACE HREF WITH YOUR PORTFOLIO LINK -->
                         <a href="[PASTE PORTFOLIO WEBSITE LINK HERE]" target="_blank" rel="noopener" class="project-btn">
                             View Project
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1110,7 +1483,7 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Landing Page -->
+                <!-- Project 2 -->
                 <div class="project-card reveal reveal-delay-2">
                     <div class="project-thumb project-thumb-2">
                         <div class="project-thumb-inner">02</div>
@@ -1119,7 +1492,6 @@
                         <div class="project-category">Landing Page</div>
                         <h3 class="project-title">Landing Page</h3>
                         <p class="project-subtitle">Landing page design & development</p>
-                        <!-- REPLACE HREF WITH YOUR LANDING PAGE LINK -->
                         <a href="[PASTE LANDING PAGE LINK HERE]" target="_blank" rel="noopener" class="project-btn">
                             View Landing Page
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1129,7 +1501,7 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Shopify Store -->
+                <!-- Project 3 -->
                 <div class="project-card reveal reveal-delay-3">
                     <div class="project-thumb project-thumb-3">
                         <div class="project-thumb-inner">03</div>
@@ -1138,13 +1510,159 @@
                         <div class="project-category">Shopify</div>
                         <h3 class="project-title">Shopify Store</h3>
                         <p class="project-subtitle">Shopify e-commerce website</p>
-                        <!-- REPLACE HREF WITH YOUR SHOPIFY LINK -->
                         <a href="[PASTE SHOPIFY WEBSITE LINK HERE]" target="_blank" rel="noopener" class="project-btn">
                             View Shopify Project
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M7 17L17 7M17 7H7M17 7V17"/>
                             </svg>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PRICING SECTION
+         ============================================ -->
+    <section class="section pricing" id="pricing">
+        <div class="section-inner">
+            <div class="pricing-header reveal">
+                <div class="section-label">Pricing</div>
+                <h2 class="section-title">
+                    Simple, transparent <span class="italic">pricing</span>
+                </h2>
+                <p class="section-desc" style="max-width:560px;margin:0 auto;color:var(--text-secondary);font-weight:300;font-size:1.1rem;">
+                    Choose the package that fits your needs. Every project is crafted with care and attention to detail.
+                </p>
+            </div>
+
+            <!-- Toggle -->
+            <div class="pricing-toggle reveal">
+                <span class="toggle-label active" data-plan="onetime">One-time</span>
+                <div class="toggle-switch" id="toggleSwitch">
+                    <div class="toggle-knob"></div>
+                </div>
+                <span class="toggle-label" data-plan="monthly">Monthly</span>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Package 1: Starter -->
+                <div class="pricing-card reveal reveal-delay-1">
+                    <div class="pricing-card-header">
+                        <div class="package-icon">✦</div>
+                        <h3 class="package-name">Starter</h3>
+                        <p class="package-desc">Perfect for new businesses</p>
+                    </div>
+                    <div class="pricing-card-body">
+                        <div class="price-block">
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount" data-onetime="499" data-monthly="149">499</span>
+                            </div>
+                            <div class="period">
+                                <span class="period-onetime">one-time</span>
+                                <span class="period-monthly">/ month</span>
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li><span class="check">✓</span> Shopify store setup</li>
+                            <li><span class="check">✓</span> Up to 5 pages</li>
+                            <li><span class="check">✓</span> Mobile responsive</li>
+                            <li><span class="check">✓</span> Basic SEO setup</li>
+                            <li><span class="check">✓</span> 1 revision round</li>
+                            <li class="disabled"><span class="check">✗</span> Custom features</li>
+                            <li class="disabled"><span class="check">✗</span> Ongoing support</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Package 2: Professional (Featured) -->
+                <div class="pricing-card featured reveal reveal-delay-2">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-card-header">
+                        <div class="package-icon"></div>
+                        <h3 class="package-name">Professional</h3>
+                        <p class="package-desc">For growing brands</p>
+                    </div>
+                    <div class="pricing-card-body">
+                        <div class="price-block">
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount" data-onetime="999" data-monthly="299">999</span>
+                            </div>
+                            <div class="period">
+                                <span class="period-onetime">one-time</span>
+                                <span class="period-monthly">/ month</span>
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li><span class="check">✓</span> Full Shopify store</li>
+                            <li><span class="check">✓</span> Up to 15 pages</li>
+                            <li><span class="check">✓</span> Mobile responsive</li>
+                            <li><span class="check">✓</span> Advanced SEO</li>
+                            <li><span class="check">✓</span> 3 revision rounds</li>
+                            <li><span class="check">✓</span> Custom features</li>
+                            <li class="disabled"><span class="check"></span> Ongoing support</li>
+                        </ul>
+                        <a href="#contact" class="package-btn featured-btn">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Package 3: Premium -->
+                <div class="pricing-card reveal reveal-delay-3">
+                    <div class="pricing-card-header">
+                        <div class="package-icon">✦</div>
+                        <h3 class="package-name">Premium</h3>
+                        <p class="package-desc">Complete e-commerce solution</p>
+                    </div>
+                    <div class="pricing-card-body">
+                        <div class="price-block">
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount" data-onetime="1999" data-monthly="499">1,999</span>
+                            </div>
+                            <div class="period">
+                                <span class="period-onetime">one-time</span>
+                                <span class="period-monthly">/ month</span>
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li><span class="check">✓</span> Full Shopify store</li>
+                            <li><span class="check">✓</span> Unlimited pages</li>
+                            <li><span class="check">✓</span> Mobile responsive</li>
+                            <li><span class="check">✓</span> Advanced SEO + analytics</li>
+                            <li><span class="check">✓</span> Unlimited revisions</li>
+                            <li><span class="check">✓</span> Custom features</li>
+                            <li><span class="check">✓</span> 3 months support</li>
+                        </ul>
+                        <a href="#contact" class="package-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="how-it-works reveal" style="margin-top:120px;">
+                <div class="section-label" style="justify-content:center;">How It Works</div>
+                <h3 class="section-title" style="text-align:center;margin-bottom:60px;">
+                    Three simple <span class="italic">steps</span>
+                </h3>
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <h4 class="step-title">You send me the brief</h4>
+                        <p class="step-desc">Tell me about your brand, goals, and vision. Share any references or ideas you have in mind.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <h4 class="step-title">I create and deliver</h4>
+                        <p class="step-desc">I design and build your Shopify store with attention to every detail, keeping you updated throughout.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <h4 class="step-title">You launch and convert</h4>
+                        <p class="step-desc">Your store goes live — beautiful, fast, and ready to turn visitors into loyal customers.</p>
                     </div>
                 </div>
             </div>
@@ -1167,7 +1685,6 @@
                     Available for freelance projects and collaborations. Let's build something beautiful.
                 </p>
 
-                <!-- REPLACE HREF WITH YOUR LINKEDIN LINK -->
                 <a href="[PASTE LINKEDIN LINK HERE]" target="_blank" rel="noopener" class="contact-cta">
                     LinkedIn
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1188,11 +1705,8 @@
             <div class="footer-top">
                 <div class="footer-logo">Vika.</div>
                 <ul class="footer-links">
-                    <!-- REPLACE HREF WITH YOUR LINKEDIN LINK -->
                     <li><a href="[PASTE LINKEDIN LINK HERE]" target="_blank" rel="noopener">LinkedIn</a></li>
-                    <!-- REPLACE HREF WITH YOUR PORTFOLIO LINK -->
                     <li><a href="[PASTE PORTFOLIO WEBSITE LINK HERE]" target="_blank" rel="noopener">Portfolio</a></li>
-                    <!-- REPLACE HREF WITH YOUR SHOPIFY LINK -->
                     <li><a href="[PASTE SHOPIFY WEBSITE LINK HERE]" target="_blank" rel="noopener">Shopify</a></li>
                 </ul>
             </div>
@@ -1233,7 +1747,7 @@
             document.body.style.overflow = '';
         }
 
-        // ===== SMOOTH SCROLL (fallback for older browsers) =====
+        // ===== SMOOTH SCROLL =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
@@ -1262,7 +1776,42 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // ===== ACTIVE NAV LINK HIGHLIGHT =====
+        // ===== PRICING TOGGLE =====
+        const toggleSwitch = document.getElementById('toggleSwitch');
+        const toggleLabels = document.querySelectorAll('.toggle-label');
+        const priceAmounts = document.querySelectorAll('.amount');
+
+        toggleSwitch.addEventListener('click', () => {
+            toggleSwitch.classList.toggle('active');
+            document.body.classList.toggle('monthly');
+
+            const isMonthly = document.body.classList.contains('monthly');
+
+            toggleLabels.forEach(label => {
+                const plan = label.dataset.plan;
+                if ((isMonthly && plan === 'monthly') || (!isMonthly && plan === 'onetime')) {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+
+            // Animate price change
+            priceAmounts.forEach(amount => {
+                const onetime = amount.dataset.onetime;
+                const monthly = amount.dataset.monthly;
+                const newValue = isMonthly ? monthly : onetime;
+
+                // Simple animation
+                amount.style.opacity = '0';
+                setTimeout(() => {
+                    amount.textContent = newValue;
+                    amount.style.opacity = '1';
+                }, 200);
+            });
+        });
+
+        // ===== ACTIVE NAV LINK =====
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
 

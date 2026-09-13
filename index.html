@@ -1228,3 +1228,242 @@
     </footer>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Vika's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #FAF8F5;
+            --blue: #a2d2ff;
+            --brown: #9c6644;
+            --brown-dark: #7a4f35;
+            --text: #1A1A1A;
+            --secondary: #6B6B6B;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation (Նույնը, ինչ մյուս էջերում) */
+        nav {
+            padding: 30px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--brown);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--blue);
+        }
+
+        /* Contact / Footer Section */
+        .contact-footer {
+            flex: 1;
+            background: var(--brown);
+            /* Վերևի անկյունները կլոր, ներքևի անկյունները քառակուսի */
+            border-radius: 40px 40px 0 0; 
+            margin: 0 20px 0 20px; /* Կողքերից նույն հեռավորությունը, ինչ մյուս էջերում */
+            padding: 100px 60px 50px 60px;
+            text-align: center;
+            color: #FAF8F5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: #FFFFFF;
+            line-height: 1.1;
+            margin-bottom: 50px;
+            letter-spacing: -0.02em;
+        }
+
+        .contact-title .italic {
+            font-style: italic;
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .contact-link-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 16px 32px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            min-width: 320px;
+        }
+
+        .contact-link-item:hover {
+            background: #FFFFFF;
+            color: var(--brown);
+            border-color: #FFFFFF;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-link-item svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .footer-bottom {
+            margin-top: auto;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--blue);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 30px;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .contact-footer {
+                margin: 0 10px 0 10px;
+                padding: 60px 30px 40px 30px;
+                border-radius: 30px 30px 0 0;
+            }
+            .contact-link-item {
+                min-width: 100%;
+                font-size: 1rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Vika.</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="shopify.html">Shopify</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="contact-footer">
+        <h1 class="contact-title">
+            Let's make something <br>
+            <span class="italic">great together.</span>
+        </h1>
+
+        <div class="contact-links">
+            <!-- Gmail Link -->
+            <a href="mailto:vikayan236@gmail.com" class="contact-link-item">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                vikayan236@gmail.com
+            </a>
+
+            <!-- LinkedIn Link -->
+            <a href="https://www.linkedin.com/in/vika-yan-7a4732434/" target="_blank" rel="noopener" class="contact-link-item">
+                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                LinkedIn Profile
+            </a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vika. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="portfolio.html">Portfolio</a>
+                <a href="shopify.html">Shopify</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

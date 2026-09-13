@@ -805,3 +805,426 @@
     </footer>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Vika's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #FAF8F5;
+            --blue: #a2d2ff;
+            --brown: #9c6644;
+            --brown-dark: #7a4f35;
+            --text: #1A1A1A;
+            --secondary: #6B6B6B;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 30px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--brown);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--blue);
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            flex: 1;
+            margin: 0 20px 20px 20px;
+            border-radius: 40px;
+            padding: 80px 60px;
+        }
+
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .portfolio-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            color: var(--brown);
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .portfolio-subtitle {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Featured Project (Rhode Replica) */
+        .featured-project {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+            background: #FFFFFF;
+            border-radius: 40px;
+            padding: 60px;
+            margin-bottom: 80px;
+            box-shadow: 0 20px 60px rgba(156, 102, 68, 0.08);
+        }
+
+        .featured-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--blue);
+            color: var(--brown-dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 50px;
+            margin-bottom: 24px;
+        }
+
+        .featured-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--brown);
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .featured-description {
+            font-size: 1.05rem;
+            color: var(--secondary);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .store-name-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(162, 210, 255, 0.2);
+            border-radius: 12px;
+            margin-bottom: 32px;
+            font-weight: 600;
+            color: var(--brown);
+        }
+
+        .store-name-tag span {
+            color: var(--blue);
+            font-size: 1.2rem;
+        }
+
+        .featured-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: var(--brown);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .featured-btn:hover {
+            background: var(--brown-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(156, 102, 68, 0.3);
+        }
+
+        .featured-btn .arrow {
+            transition: transform 0.3s;
+        }
+
+        .featured-btn:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        .featured-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #f5f0eb 0%, #e8dfd5 100%);
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(156, 102, 68, 0.1);
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-placeholder-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--brown);
+            opacity: 0.15;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .image-placeholder-text small {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 10px;
+            opacity: 0.5;
+        }
+
+        /* Other Projects Grid */
+        .other-projects-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--brown);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: #FFFFFF;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(156, 102, 68, 0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(156, 102, 68, 0.12);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, var(--blue) 0%, #d4e8f5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image span {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .project-content {
+            padding: 28px;
+        }
+
+        .project-category {
+            font-size: 0.8rem;
+            color: var(--blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--brown);
+            margin-bottom: 10px;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            padding: 30px 60px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--secondary);
+        }
+
+        /* Mobile */
+        @media (max-width: 1024px) {
+            .featured-project {
+                grid-template-columns: 1fr;
+                padding: 40px;
+                gap: 40px;
+            }
+            .featured-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 30px;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .portfolio-section {
+                margin: 0 10px 10px 10px;
+                padding: 40px 24px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            footer {
+                padding: 20px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Vika.</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="shopify.html">Shopify</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="portfolio-section">
+        <div class="portfolio-header">
+            <h1 class="portfolio-title">My Portfolio</h1>
+            <p class="portfolio-subtitle">A selection of my recent Shopify projects and web development work</p>
+        </div>
+
+        <!-- FEATURED PROJECT: RHODE REPLICA -->
+        <div class="featured-project">
+            <div class="featured-content">
+                <div class="featured-badge">Featured Project</div>
+                <h2 class="featured-title">Rhode Brand Page Recreation</h2>
+                <p class="featured-description">
+                    A pixel-perfect recreation of the Rhode brand experience, built and customized on Shopify. This project showcases advanced theme customization, premium visual design, and e-commerce best practices to deliver a seamless user experience.
+                </p>
+                
+                <div class="store-name-tag">
+                    <span>🛍️</span> Store Name: <strong>Viktoria</strong>
+                </div>
+
+                <a href="https://victoria-sarkisova.myshopify.com" target="_blank" class="featured-btn">
+                    View My Store 
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+
+            <div class="featured-image">
+                <!-- Հետո այստեղ կդնես քո սքրինշոթը՝ <img src="rhode-screenshot.jpg" alt="Rhode Replica"> -->
+                <div class="image-placeholder-text">
+                    Rhode<br>
+                    <small>Viktoria Store Preview</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- OTHER PROJECTS (Կարող ես հետո փոխել կամ ջնջել) -->
+        <h3 class="other-projects-title">Other Works</h3>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <span>02</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-category">Landing Page</div>
+                    <h4 class="project-title">Beauty Brand Launch</h4>
+                    <p class="project-desc">High-converting landing page design for a new product campaign.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #9c6644 0%, #c49a7c 100%);">
+                    <span>03</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-category">Web Design</div>
+                    <h4 class="project-title">Wellness Studio</h4>
+                    <p class="project-desc">Modern website design with clean aesthetics and booking integration.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Vika. All rights reserved.</p>
+    </footer>
+</body>
+</html>

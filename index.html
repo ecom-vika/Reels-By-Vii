@@ -164,3 +164,301 @@
     </footer>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Vika's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #FAF8F5;
+            --brown: #9c6644;
+            --brown-dark: #7a4f35;
+            --accent: #a2d2ff;
+            --text: #1A1A1A;
+            --secondary: #6B6B6B;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 30px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--brown);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* About Section */
+        .about-section {
+            flex: 1;
+            background: var(--brown);
+            padding: 80px 60px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-title {
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 0.95;
+            margin-bottom: 30px;
+            letter-spacing: -0.03em;
+        }
+
+        .about-subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .about-location {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+        }
+
+        .social-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .social-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .social-number {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 500px;
+        }
+
+        .about-text strong {
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .about-image {
+            flex: 0 0 400px;
+            height: 500px;
+            background: #FFFFFF;
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent) 0%, #7BA3B8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        .image-badge {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: var(--accent);
+            width: 60px;
+            height: 40px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .image-badge span {
+            width: 8px;
+            height: 8px;
+            background: #FFFFFF;
+            border-radius: 50%;
+        }
+
+        /* Footer */
+        footer {
+            padding: 30px 60px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--secondary);
+            background: var(--bg);
+        }
+
+        /* Mobile */
+        @media (max-width: 1024px) {
+            .about-section {
+                flex-direction: column;
+                padding: 60px 40px;
+                gap: 50px;
+            }
+            .about-image {
+                flex: 0 0 350px;
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 30px;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .about-section {
+                padding: 50px 30px;
+            }
+            .about-title {
+                font-size: clamp(3rem, 12vw, 5rem);
+            }
+            footer {
+                padding: 20px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Vika.</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="shopify.html">Shopify</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="about-section">
+        <div class="about-content">
+            <h1 class="about-title">hi<br>im vika!</h1>
+            <p class="about-subtitle">Shopify Specialist</p>
+            <p class="about-location">E-commerce & Web Development</p>
+
+            <div class="social-stats">
+                <div class="social-item">
+                    <div class="social-icon">📱</div>
+                    <span class="social-number">Projects</span>
+                </div>
+                <div class="social-item">
+                    <div class="social-icon"></div>
+                    <span class="social-number">Clients</span>
+                </div>
+            </div>
+
+            <p class="about-text">
+                My name's <strong>Vika</strong>. I'm a <strong>Shopify Specialist</strong> focused on e-commerce and web development. I create and customize Shopify stores and websites, combining technical skills with content and visual design.
+                <br><br>
+                My skills include <strong>Shopify, website development, e-commerce, content creation, and visual design</strong>. I enjoy turning ideas into functional, user-friendly and visually engaging digital experiences.
+            </p>
+        </div>
+
+        <div class="about-image">
+            <!-- Փոխարինիր քո նկարով -->
+            <img src="vika-photo.jpg" alt="Vika" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="about-image-placeholder" style="display:none;">V</div>
+            <div class="image-badge">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Vika. All rights reserved.</p>
+    </footer>
+</body>
+</html>

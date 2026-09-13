@@ -6,37 +6,38 @@
     <title>Vika's Portfolio - Shopify Specialist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --bg: #FAF8F5;
-            --text: #1A1A1A;
-            --accent: #a2d2ff;
+            --blue: #a2d2ff;
             --brown: #9c6644;
-            --brown-dark: #8a5a3a;
+            --brown-dark: #7a4f35;
+            --text: #1A1A1A;
             --secondary: #6B6B6B;
         }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg);
             color: var(--text);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
+
+        /* Navigation */
         nav {
             padding: 30px 60px;
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            position: relative;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--bg);
+            z-index: 1000;
         }
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
+        .nav-links { display: flex; gap: 40px; list-style: none; }
         .nav-links a {
             text-decoration: none;
             color: var(--secondary);
@@ -44,17 +45,13 @@
             font-weight: 500;
             transition: color 0.3s;
         }
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--accent);
-        }
+        .nav-links a:hover { color: var(--blue); }
         .hamburger {
             display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
             padding: 5px;
-            z-index: 1001;
         }
         .hamburger span {
             width: 25px;
@@ -75,21 +72,19 @@
             border-radius: 16px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             min-width: 200px;
-            z-index: 1000;
         }
         .mobile-menu.active { display: block; }
         .mobile-menu li { list-style: none; margin-bottom: 12px; }
-        .mobile-menu li:last-child { margin-bottom: 0; }
         .mobile-menu a {
             text-decoration: none;
             color: var(--text);
             font-size: 1rem;
             font-weight: 500;
-            transition: color 0.3s;
         }
-        .mobile-menu a:hover { color: var(--accent); }
+
+        /* Hero Section */
         .hero {
-            flex: 1;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -104,12 +99,12 @@
             line-height: 1;
             letter-spacing: -0.03em;
             margin-bottom: 20px;
-            color: #a2d2ff;
+            color: var(--blue);
         }
         .hero-subtitle {
             font-size: clamp(1rem, 2vw, 1.5rem);
             font-weight: 300;
-            color: #a2d2ff;
+            color: var(--blue);
             letter-spacing: 0.2em;
             text-transform: uppercase;
         }
@@ -122,109 +117,16 @@
             border-radius: 50px;
             font-weight: 500;
             font-size: 1rem;
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            transition: all 0.3s;
         }
         .cta-button:hover {
             transform: translateY(-3px);
             background: var(--brown-dark);
             box-shadow: 0 10px 30px rgba(156, 102, 68, 0.3);
         }
-        footer {
-            padding: 30px 60px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--secondary);
-        }
-        @media (max-width: 768px) {
-            nav { padding: 20px 30px; justify-content: flex-end; }
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
-            footer { padding: 20px 30px; }
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-            <span></span><span></span><span></span>
-        </div>
-        <ul class="mobile-menu" id="mobileMenu">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
 
-    <section class="hero">
-        <h1 class="hero-title">Vika's<br>Portfolio</h1>
-        <p class="hero-subtitle">Shopify Specialist</p>
-        <a href="about.html" class="cta-button">Let's Start</a>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Vika. All rights reserved.</p>
-    </footer>
-
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-        });
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Vika's Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --bg: #FAF8F5;
-            --brown: #9c6644;
-            --brown-dark: #7a4f35;
-            --accent: #a2d2ff;
-            --text: #1A1A1A;
-            --secondary: #6B6B6B;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+        /* About Section */
         .about-section {
-            flex: 1;
             background: var(--brown);
             margin: 0 20px 20px 20px;
             border-radius: 40px 40px 0 0;
@@ -261,24 +163,17 @@
             color: rgba(255, 255, 255, 0.9);
             max-width: 550px;
         }
-        .about-text strong {
-            color: #FFFFFF;
-            font-weight: 600;
-        }
+        .about-text strong { color: #FFFFFF; font-weight: 600; }
         .about-image {
             flex: 0 0 400px;
             height: 500px;
-            background: var(--accent);
+            background: var(--blue);
             border-radius: 32px;
             overflow: hidden;
             position: relative;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .about-image img { width: 100%; height: 100%; object-fit: cover; }
         .about-image-placeholder {
             width: 100%;
             height: 100%;
@@ -309,108 +204,9 @@
             background: #FFFFFF;
             border-radius: 50%;
         }
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            background: var(--brown);
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            margin-bottom: 40px;
-        }
-        .back-button:hover {
-            background: var(--brown-dark);
-            transform: translateY(-2px);
-        }
-        footer {
-            padding: 30px 60px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--secondary);
-        }
-        @media (max-width: 1024px) {
-            .about-section {
-                flex-direction: column;
-                padding: 60px 40px;
-                gap: 50px;
-            }
-            .about-image {
-                flex: 0 0 350px;
-                width: 100%;
-                max-width: 400px;
-            }
-        }
-        @media (max-width: 768px) {
-            .about-section {
-                margin: 0 10px 10px 10px;
-                padding: 50px 30px;
-                border-radius: 30px 30px 0 0;
-            }
-            .about-title {
-                font-size: clamp(3rem, 12vw, 5rem);
-            }
-            footer { padding: 20px 30px; }
-        }
-    </style>
-</head>
-<body>
-    <section class="about-section">
-        <div class="about-content">
-            <a href="index.html" class="back-button">← Back to Home</a>
-            <h1 class="about-title">hi<br>im vika!</h1>
-            <p class="about-subtitle">Shopify Specialist</p>
-            <p class="about-location">E-commerce & Web Development</p>
-            <p class="about-text">
-                My name's <strong>Vika</strong>. I'm a <strong>Shopify Specialist</strong> focused on e-commerce and web development. I create and customize Shopify stores and websites, combining technical skills with content and visual design.
-            </p>
-        </div>
-        <div class="about-image">
-            <img src="vika-photo.jpg" alt="Vika" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="about-image-placeholder" style="display:none;">V</div>
-            <div class="image-badge">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <p>&copy; 2026 Vika. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills - Vika's Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --bg: #FAF8F5;
-            --blue: #a2d2ff;
-            --brown: #9c6644;
-            --brown-dark: #7a4f35;
-            --text: #1A1A1A;
-            --secondary: #6B6B6B;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+
+        /* Skills Section */
         .skills-section {
-            flex: 1;
             background: var(--blue);
             margin: 0 20px 20px 20px;
             border-radius: 40px 40px 0 0;
@@ -449,12 +245,6 @@
             border-radius: 32px;
             padding: 40px;
             border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(156, 102, 68, 0.15);
-            background: rgba(255, 255, 255, 0.35);
         }
         .category-title {
             font-size: 1.3rem;
@@ -488,18 +278,15 @@
             align-items: center;
             justify-content: space-between;
             transition: all 0.3s;
-            cursor: default;
         }
         .skill-item:hover {
             background: var(--brown);
-            color: #FFFFFF;
             transform: scale(1.05);
         }
         .skill-name {
             font-size: 1rem;
             font-weight: 600;
             color: var(--brown);
-            transition: color 0.3s;
         }
         .skill-item:hover .skill-name { color: #FFFFFF; }
         .skill-level { display: flex; gap: 4px; }
@@ -509,107 +296,12 @@
             border-radius: 50%;
             background: var(--brown);
             opacity: 0.3;
-            transition: all 0.3s;
         }
         .skill-dot.active { opacity: 1; }
         .skill-item:hover .skill-dot { background: #FFFFFF; }
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            background: var(--brown);
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            margin-bottom: 40px;
-        }
-        .back-button:hover {
-            background: var(--brown-dark);
-            transform: translateY(-2px);
-        }
-        footer {
-            padding: 30px 60px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--secondary);
-        }
-        @media (max-width: 1024px) {
-            .skills-section { flex-direction: column; padding: 60px 40px; }
-            .skills-left { flex: none; }
-            .skills-grid { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-            .skills-section { margin: 0 10px 10px 10px; padding: 50px 30px; border-radius: 30px 30px 0 0; }
-            .skills-title { font-size: clamp(3rem, 12vw, 5rem); }
-            .skill-category { padding: 30px 24px; }
-            footer { padding: 20px 30px; }
-        }
-    </style>
-</head>
-<body>
-    <section class="skills-section">
-        <div class="skills-left">
-            <a href="index.html" class="back-button">← Back to Home</a>
-            <h1 class="skills-title">My<br>Skills</h1>
-            <p class="skills-subtitle">What I Do Best</p>
-            <p class="skills-description">I combine technical expertise with creative vision to build Shopify stores that not only look beautiful but drive real results.</p>
-        </div>
-        <div class="skills-right">
-            <div class="skill-category">
-                <div class="category-title"><div class="category-icon">💻</div>Technical Skills</div>
-                <div class="skills-grid">
-                    <div class="skill-item"><span class="skill-name">Shopify</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
-                    <div class="skill-item"><span class="skill-name">HTML</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
-                    <div class="skill-item"><span class="skill-name">CSS</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
-                    <div class="skill-item"><span class="skill-name">Landing Page</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <div class="category-title"><div class="category-icon">🎨</div>Creative & Strategy</div>
-                <div class="skills-grid">
-                    <div class="skill-item"><span class="skill-name">Visual Design</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
-                    <div class="skill-item"><span class="skill-name">Web Content</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
-                    <div class="skill-item"><span class="skill-name">Analytics</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div><div class="skill-dot"></div></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer><p>&copy; 2026 Vika. All rights reserved.</p></footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Vika's Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --bg: #FAF8F5;
-            --blue: #a2d2ff;
-            --brown: #9c6644;
-            --brown-dark: #7a4f35;
-            --text: #1A1A1A;
-            --secondary: #6B6B6B;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+
+        /* Portfolio Section */
         .portfolio-section {
-            flex: 1;
             margin: 0 20px 20px 20px;
             border-radius: 40px 40px 0 0;
             padding: 80px 60px;
@@ -622,12 +314,10 @@
             color: var(--brown);
             line-height: 1;
             margin-bottom: 20px;
-            letter-spacing: -0.02em;
         }
         .portfolio-subtitle {
             font-size: 1.1rem;
             color: var(--secondary);
-            font-weight: 400;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -639,7 +329,6 @@
             background: #FFFFFF;
             border-radius: 40px;
             padding: 60px;
-            margin-bottom: 80px;
             box-shadow: 0 20px 60px rgba(156, 102, 68, 0.08);
         }
         .featured-badge {
@@ -679,7 +368,6 @@
             font-weight: 600;
             color: var(--brown);
         }
-        .store-name-tag span { color: var(--blue); font-size: 1.2rem; }
         .featured-btn {
             display: inline-flex;
             align-items: center;
@@ -690,29 +378,21 @@
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 1rem;
             transition: all 0.3s;
         }
         .featured-btn:hover {
             background: var(--brown-dark);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(156, 102, 68, 0.3);
         }
-        .featured-btn .arrow { transition: transform 0.3s; }
-        .featured-btn:hover .arrow { transform: translateX(5px); }
         .featured-image {
             width: 100%;
             aspect-ratio: 4/3;
             background: linear-gradient(135deg, #f5f0eb 0%, #e8dfd5 100%);
             border-radius: 24px;
-            overflow: hidden;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(156, 102, 68, 0.1);
         }
-        .featured-image img { width: 100%; height: 100%; object-fit: cover; }
         .image-placeholder-text {
             font-family: 'Playfair Display', serif;
             font-size: 4rem;
@@ -720,108 +400,12 @@
             color: var(--brown);
             opacity: 0.15;
             text-align: center;
-            line-height: 1;
         }
-        .image-placeholder-text small {
-            display: block;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 500;
-            margin-top: 10px;
-            opacity: 0.5;
-        }
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            background: var(--brown);
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            margin-bottom: 40px;
-        }
-        .back-button:hover {
-            background: var(--brown-dark);
-            transform: translateY(-2px);
-        }
-        footer {
-            padding: 30px 60px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--secondary);
-        }
-        @media (max-width: 1024px) {
-            .featured-project { grid-template-columns: 1fr; padding: 40px; gap: 40px; }
-            .featured-image { order: -1; }
-        }
-        @media (max-width: 768px) {
-            .portfolio-section { margin: 0 10px 10px 10px; padding: 40px 24px; border-radius: 30px 30px 0 0; }
-            footer { padding: 20px 30px; }
-        }
-    </style>
-</head>
-<body>
-    <section class="portfolio-section">
-        <a href="index.html" class="back-button">← Back to Home</a>
-        <div class="portfolio-header">
-            <h1 class="portfolio-title">My Portfolio</h1>
-            <p class="portfolio-subtitle">A selection of my recent Shopify projects and web development work</p>
-        </div>
-        <div class="featured-project">
-            <div class="featured-content">
-                <div class="featured-badge">Featured Project</div>
-                <h2 class="featured-title">Rhode Brand Page Recreation</h2>
-                <p class="featured-description">A pixel-perfect recreation of the Rhode brand experience, built and customized on Shopify. This project showcases advanced theme customization, premium visual design, and e-commerce best practices to deliver a seamless user experience.</p>
-                <div class="store-name-tag"><span>️</span> Store Name: <strong>Viktoria</strong></div>
-                <a href="https://victoria-sarkisova.myshopify.com" target="_blank" class="featured-btn">View My Store <span class="arrow">→</span></a>
-            </div>
-            <div class="featured-image">
-                <div class="image-placeholder-text">Rhode<br><small>Viktoria Store Preview</small></div>
-            </div>
-        </div>
-    </section>
-    <footer><p>&copy; 2026 Vika. All rights reserved.</p></footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Vika's Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --bg: #FAF8F5;
-            --blue: #a2d2ff;
-            --brown: #9c6644;
-            --brown-dark: #7a4f35;
-            --text: #1A1A1A;
-            --secondary: #6B6B6B;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+
+        /* Contact Section */
         .contact-section {
-            flex: 1;
             padding: 80px 40px 60px 40px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
         .contact-title {
             font-family: 'Playfair Display', serif;
@@ -830,11 +414,9 @@
             color: var(--brown);
             line-height: 1.1;
             margin-bottom: 40px;
-            letter-spacing: -0.02em;
         }
         .contact-title .italic {
             font-style: italic;
-            font-weight: 700;
             color: var(--blue);
         }
         .contact-links {
@@ -854,14 +436,15 @@
             padding: 14px 28px;
             border: 2px solid var(--brown);
             border-radius: 50px;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
         .contact-link-item:hover {
             background: var(--brown);
             color: #FFFFFF;
-            transform: translateY(-2px);
         }
         .contact-link-item svg { width: 18px; height: 18px; fill: currentColor; }
+
+        /* Footer */
         .footer {
             background: var(--brown);
             border-radius: 40px 40px 0 0;
@@ -878,74 +461,176 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
         }
         .footer-copyright {
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.8);
         }
-        .footer-links {
-            display: flex;
-            gap: 30px;
-        }
+        .footer-links { display: flex; gap: 30px; }
         .footer-links a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-size: 0.9rem;
-            transition: color 0.3s;
         }
         .footer-links a:hover { color: var(--blue); }
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            background: var(--brown);
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            margin-bottom: 40px;
-        }
-        .back-button:hover {
-            background: var(--brown-dark);
-            transform: translateY(-2px);
+
+        /* Mobile */
+        @media (max-width: 1024px) {
+            .about-section, .skills-section { flex-direction: column; padding: 60px 40px; }
+            .about-image { flex: 0 0 350px; width: 100%; max-width: 400px; }
+            .skills-left { flex: none; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .featured-project { grid-template-columns: 1fr; padding: 40px; }
+            .featured-image { order: -1; }
         }
         @media (max-width: 768px) {
-            .contact-section { padding: 60px 24px 40px 24px; }
+            nav { padding: 20px 30px; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .about-section, .skills-section, .portfolio-section { margin: 0 10px 10px 10px; padding: 50px 30px; border-radius: 30px 30px 0 0; }
+            .about-title { font-size: clamp(3rem, 12vw, 5rem); }
+            .skills-title { font-size: clamp(3rem, 12vw, 5rem); }
             .footer { margin: 0 10px 0 10px; padding: 30px 24px 20px 24px; border-radius: 30px 30px 0 0; }
             .footer-content { flex-direction: column; text-align: center; gap: 16px; }
-            .footer-links { gap: 20px; }
         }
     </style>
 </head>
 <body>
-    <section class="contact-section">
-        <a href="index.html" class="back-button">← Back to Home</a>
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="mobile-menu" id="mobileMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1 class="hero-title">Vika's<br>Portfolio</h1>
+        <p class="hero-subtitle">Shopify Specialist</p>
+        <a href="#about" class="cta-button">Let's Start</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <h1 class="about-title">hi<br>im vika!</h1>
+            <p class="about-subtitle">Shopify Specialist</p>
+            <p class="about-location">E-commerce & Web Development</p>
+            <p class="about-text">
+                My name's <strong>Vika</strong>. I'm a <strong>Shopify Specialist</strong> focused on e-commerce and web development. I create and customize Shopify stores and websites, combining technical skills with content and visual design.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="vika-photo.jpg" alt="Vika" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="about-image-placeholder" style="display:none;">V</div>
+            <div class="image-badge">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="skills-left">
+            <h1 class="skills-title">My<br>Skills</h1>
+            <p class="skills-subtitle">What I Do Best</p>
+            <p class="skills-description">I combine technical expertise with creative vision to build Shopify stores that not only look beautiful but drive real results.</p>
+        </div>
+        <div class="skills-right">
+            <div class="skill-category">
+                <div class="category-title"><div class="category-icon"></div>Technical Skills</div>
+                <div class="skills-grid">
+                    <div class="skill-item"><span class="skill-name">Shopify</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">HTML</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">CSS</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">Landing Page</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="category-title"><div class="category-icon"></div>Creative & Strategy</div>
+                <div class="skills-grid">
+                    <div class="skill-item"><span class="skill-name">Visual Design</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">Web Content</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">Analytics</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div><div class="skill-dot"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="portfolio-header">
+            <h1 class="portfolio-title">My Portfolio</h1>
+            <p class="portfolio-subtitle">A selection of my recent Shopify projects and web development work</p>
+        </div>
+        <div class="featured-project">
+            <div class="featured-content">
+                <div class="featured-badge">Featured Project</div>
+                <h2 class="featured-title">Rhode Brand Page Recreation</h2>
+                <p class="featured-description">A pixel-perfect recreation of the Rhode brand experience, built and customized on Shopify. This project showcases advanced theme customization, premium visual design, and e-commerce best practices to deliver a seamless user experience.</p>
+                <div class="store-name-tag">🛍️ Store Name: <strong>Viktoria</strong></div>
+                <a href="https://victoria-sarkisova.myshopify.com" target="_blank" class="featured-btn">View My Store →</a>
+            </div>
+            <div class="featured-image">
+                <div class="image-placeholder-text">Rhode<br><small>Viktoria Store Preview</small></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
         <h1 class="contact-title">Let's make something <br><span class="italic">great together.</span></h1>
         <div class="contact-links">
             <a href="mailto:vikayan236@gmail.com" class="contact-link-item">
                 <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 vikayan236@gmail.com
             </a>
-            <a href="https://www.linkedin.com/in/vika-yan-7a4732434/" target="_blank" rel="noopener" class="contact-link-item">
+            <a href="https://www.linkedin.com/in/vika-yan-7a4732434/" target="_blank" class="contact-link-item">
                 <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 LinkedIn
             </a>
         </div>
     </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-divider"></div>
         <div class="footer-content">
             <p class="footer-copyright">&copy; 2026 Vika. All rights reserved.</p>
             <div class="footer-links">
-                <a href="portfolio.html">Portfolio</a>
-                <a href="shopify.html">Shopify</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="https://victoria-sarkisova.myshopify.com" target="_blank">Shopify</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

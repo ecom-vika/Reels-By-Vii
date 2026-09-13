@@ -6,7 +6,7 @@
     <title>Vika's Portfolio - Shopify Specialist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -173,16 +173,10 @@
             position: relative;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
-        .about-image img { width: 100%; height: 100%; object-fit: cover; }
-        .about-image-placeholder {
+        .about-image img {
             width: 100%;
             height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8rem;
-            color: #FFFFFF;
-            font-weight: 700;
+            object-fit: cover;
         }
         .image-badge {
             position: absolute;
@@ -389,17 +383,15 @@
             aspect-ratio: 4/3;
             background: linear-gradient(135deg, #f5f0eb 0%, #e8dfd5 100%);
             border-radius: 24px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .image-placeholder-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--brown);
-            opacity: 0.15;
-            text-align: center;
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Contact Section */
@@ -535,8 +527,7 @@
             </p>
         </div>
         <div class="about-image">
-            <img src="vika-photo.jpg" alt="Vika" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="about-image-placeholder" style="display:none;">V</div>
+            <img src="vika.jpg" alt="Vika">
             <div class="image-badge">
                 <span></span><span></span><span></span>
             </div>
@@ -552,7 +543,7 @@
         </div>
         <div class="skills-right">
             <div class="skill-category">
-                <div class="category-title"><div class="category-icon"></div>Technical Skills</div>
+                <div class="category-title"><div class="category-icon">💻</div>Technical Skills</div>
                 <div class="skills-grid">
                     <div class="skill-item"><span class="skill-name">Shopify</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
                     <div class="skill-item"><span class="skill-name">HTML</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
@@ -561,7 +552,7 @@
                 </div>
             </div>
             <div class="skill-category">
-                <div class="category-title"><div class="category-icon"></div>Creative & Strategy</div>
+                <div class="category-title"><div class="category-icon">🎨</div>Creative & Strategy</div>
                 <div class="skills-grid">
                     <div class="skill-item"><span class="skill-name">Visual Design</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
                     <div class="skill-item"><span class="skill-name">Web Content</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
@@ -586,7 +577,7 @@
                 <a href="https://victoria-sarkisova.myshopify.com" target="_blank" class="featured-btn">View My Store →</a>
             </div>
             <div class="featured-image">
-                <div class="image-placeholder-text">Rhode<br><small>Viktoria Store Preview</small></div>
+                <img src="hp-alex-pocket-pearl_2480x.jpg.webp" alt="Rhode Store Preview">
             </div>
         </div>
     </section>

@@ -3,172 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vika's Portfolio - Shopify Specialist</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg: #FAF8F5;
-            --text: #1A1A1A;
-            --accent: #a2d2ff;
-            --brown: #9c6644;
-            --brown-dark: #8a5a3a;
-            --secondary: #6B6B6B;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Navigation */
-        nav {
-            padding: 30px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--brown);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--secondary);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
-        .hero {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 40px;
-        }
-
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(4rem, 12vw, 10rem);
-            font-weight: 900;
-            line-height: 1;
-            letter-spacing: -0.03em;
-            margin-bottom: 20px;
-            color: #a2d2ff;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            font-weight: 300;
-            color: #a2d2ff;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-        }
-
-        .cta-button {
-            margin-top: 50px;
-            padding: 20px 60px;
-            background: var(--brown);
-            color: #FAF8F5;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 1rem;
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            background: var(--brown-dark);
-            box-shadow: 0 10px 30px rgba(156, 102, 68, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            padding: 30px 60px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--secondary);
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            nav {
-                padding: 20px 30px;
-                flex-direction: column;
-                gap: 20px;
-            }
-            .nav-links {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            footer {
-                padding: 20px 30px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <div class="logo">Vika.</div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="shopify.html">Shopify</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero">
-        <h1 class="hero-title">Vika's<br>Portfolio</h1>
-        <p class="hero-subtitle">Shopify Specialist</p>
-        <a href="portfolio.html" class="cta-button">Let's Start</a>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Vika. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Vika's Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -202,16 +36,9 @@
         nav {
             padding: 30px 60px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-        }
-
-        .logo {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--brown);
-            text-decoration: none;
+            position: relative;
         }
 
         .nav-links {
@@ -233,12 +60,79 @@
             color: var(--accent);
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--brown);
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            min-width: 200px;
+            z-index: 1000;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu li {
+            list-style: none;
+            margin-bottom: 12px;
+        }
+
+        .mobile-menu li:last-child {
+            margin-bottom: 0;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--accent);
+        }
+
         /* About Section */
         .about-section {
             flex: 1;
             background: var(--brown);
             margin: 0 20px 20px 20px;
-            border-radius: 40px;
+            border-radius: 40px 40px 0 0;
             padding: 80px 60px;
             display: flex;
             align-items: center;
@@ -359,17 +253,18 @@
         @media (max-width: 768px) {
             nav {
                 padding: 20px 30px;
-                flex-direction: column;
-                gap: 20px;
+                justify-content: flex-end;
             }
             .nav-links {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
+                display: none;
+            }
+            .hamburger {
+                display: flex;
             }
             .about-section {
                 margin: 0 10px 10px 10px;
                 padding: 50px 30px;
+                border-radius: 30px 30px 0 0;
             }
             .about-title {
                 font-size: clamp(3rem, 12vw, 5rem);
@@ -382,14 +277,25 @@
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">Vika.</a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html" class="active">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="shopify.html">Shopify</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <ul class="mobile-menu" id="mobileMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -406,7 +312,6 @@
         </div>
 
         <div class="about-image">
-            <!-- Փոխարինիր քո նկարով -->
             <img src="vika-photo.jpg" alt="Vika" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="about-image-placeholder" style="display:none;">V</div>
             <div class="image-badge">
@@ -420,6 +325,30 @@
     <footer>
         <p>&copy; 2026 Vika. All rights reserved.</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
 <!DOCTYPE html>
@@ -432,22 +361,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --bg: #FAF8F5;
             --blue: #a2d2ff;
-            --blue-light: #b8dfff;
             --brown: #9c6644;
             --brown-dark: #7a4f35;
             --text: #1A1A1A;
             --secondary: #6B6B6B;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg);
@@ -456,29 +378,18 @@
             display: flex;
             flex-direction: column;
         }
-
-        /* Navigation */
         nav {
             padding: 30px 60px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
+            position: relative;
         }
-
-        .logo {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--brown);
-            text-decoration: none;
-        }
-
         .nav-links {
             display: flex;
             gap: 40px;
             list-style: none;
         }
-
         .nav-links a {
             text-decoration: none;
             color: var(--secondary);
@@ -486,30 +397,61 @@
             font-weight: 500;
             transition: color 0.3s;
         }
-
         .nav-links a:hover,
         .nav-links a.active {
             color: var(--blue);
         }
-
-        /* Skills Section */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--brown);
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            min-width: 200px;
+            z-index: 1000;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu li { list-style: none; margin-bottom: 12px; }
+        .mobile-menu li:last-child { margin-bottom: 0; }
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .mobile-menu a:hover { color: var(--blue); }
         .skills-section {
             flex: 1;
             background: var(--blue);
             margin: 0 20px 20px 20px;
-            border-radius: 40px;
+            border-radius: 40px 40px 0 0;
             padding: 80px 60px;
             display: flex;
             gap: 60px;
             align-items: flex-start;
         }
-
-        .skills-left {
-            flex: 0 0 35%;
-            position: sticky;
-            top: 100px;
-        }
-
+        .skills-left { flex: 0 0 35%; position: sticky; top: 100px; }
         .skills-title {
             font-size: clamp(4rem, 8vw, 7rem);
             font-weight: 900;
@@ -518,7 +460,6 @@
             margin-bottom: 30px;
             letter-spacing: -0.03em;
         }
-
         .skills-subtitle {
             font-size: 1.1rem;
             font-weight: 600;
@@ -527,21 +468,13 @@
             text-transform: uppercase;
             margin-bottom: 16px;
         }
-
         .skills-description {
             font-size: 1.05rem;
             line-height: 1.7;
             color: var(--brown-dark);
             max-width: 400px;
         }
-
-        .skills-right {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
+        .skills-right { flex: 1; display: flex; flex-direction: column; gap: 40px; }
         .skill-category {
             background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
@@ -550,13 +483,11 @@
             border: 2px solid rgba(255, 255, 255, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .skill-category:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(156, 102, 68, 0.15);
             background: rgba(255, 255, 255, 0.35);
         }
-
         .category-title {
             font-size: 1.3rem;
             font-weight: 700;
@@ -566,7 +497,6 @@
             align-items: center;
             gap: 12px;
         }
-
         .category-icon {
             width: 40px;
             height: 40px;
@@ -577,13 +507,11 @@
             justify-content: center;
             font-size: 1.3rem;
         }
-
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 16px;
         }
-
         .skill-item {
             background: rgba(255, 255, 255, 0.4);
             padding: 20px 24px;
@@ -594,29 +522,19 @@
             transition: all 0.3s;
             cursor: default;
         }
-
         .skill-item:hover {
             background: var(--brown);
             color: #FFFFFF;
             transform: scale(1.05);
         }
-
         .skill-name {
             font-size: 1rem;
             font-weight: 600;
             color: var(--brown);
             transition: color 0.3s;
         }
-
-        .skill-item:hover .skill-name {
-            color: #FFFFFF;
-        }
-
-        .skill-level {
-            display: flex;
-            gap: 4px;
-        }
-
+        .skill-item:hover .skill-name { color: #FFFFFF; }
+        .skill-level { display: flex; gap: 4px; }
         .skill-dot {
             width: 8px;
             height: 8px;
@@ -625,75 +543,47 @@
             opacity: 0.3;
             transition: all 0.3s;
         }
-
-        .skill-dot.active {
-            opacity: 1;
-        }
-
-        .skill-item:hover .skill-dot {
-            background: #FFFFFF;
-        }
-
-        /* Footer */
+        .skill-dot.active { opacity: 1; }
+        .skill-item:hover .skill-dot { background: #FFFFFF; }
         footer {
             padding: 30px 60px;
             text-align: center;
             font-size: 0.85rem;
             color: var(--secondary);
         }
-
-        /* Mobile */
         @media (max-width: 1024px) {
-            .skills-section {
-                flex-direction: column;
-                padding: 60px 40px;
-            }
-            .skills-left {
-                position: static;
-                flex: none;
-            }
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+            .skills-section { flex-direction: column; padding: 60px 40px; }
+            .skills-left { position: static; flex: none; }
+            .skills-grid { grid-template-columns: 1fr; }
         }
-
         @media (max-width: 768px) {
-            nav {
-                padding: 20px 30px;
-                flex-direction: column;
-                gap: 20px;
-            }
-            .nav-links {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .skills-section {
-                margin: 0 10px 10px 10px;
-                padding: 50px 30px;
-            }
-            .skills-title {
-                font-size: clamp(3rem, 12vw, 5rem);
-            }
-            .skill-category {
-                padding: 30px 24px;
-            }
-            footer {
-                padding: 20px 30px;
-            }
+            nav { padding: 20px 30px; justify-content: flex-end; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .skills-section { margin: 0 10px 10px 10px; padding: 50px 30px; border-radius: 30px 30px 0 0; }
+            .skills-title { font-size: clamp(3rem, 12vw, 5rem); }
+            .skill-category { padding: 30px 24px; }
+            footer { padding: 20px 30px; }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">Vika.</a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html" class="active">Skills</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="shopify.html">Shopify</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="mobile-menu" id="mobileMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html" class="active">Skills</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -702,107 +592,51 @@
         <div class="skills-left">
             <h1 class="skills-title">My<br>Skills</h1>
             <p class="skills-subtitle">What I Do Best</p>
-            <p class="skills-description">
-                I combine technical expertise with creative vision to build Shopify stores that not only look beautiful but drive real results.
-            </p>
+            <p class="skills-description">I combine technical expertise with creative vision to build Shopify stores that not only look beautiful but drive real results.</p>
         </div>
-
         <div class="skills-right">
-            <!-- Technical Skills -->
             <div class="skill-category">
-                <div class="category-title">
-                    <div class="category-icon">💻</div>
-                    Technical Skills
-                </div>
+                <div class="category-title"><div class="category-icon">💻</div>Technical Skills</div>
                 <div class="skills-grid">
-                    <div class="skill-item">
-                        <span class="skill-name">Shopify</span>
-                        <div class="skill-level">
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">HTML</span>
-                        <div class="skill-level">
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">CSS</span>
-                        <div class="skill-level">
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Landing Page</span>
-                        <div class="skill-level">
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot"></div>
-                        </div>
-                    </div>
+                    <div class="skill-item"><span class="skill-name">Shopify</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">HTML</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">CSS</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">Landing Page</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
                 </div>
             </div>
-
-            <!-- Creative & Strategy -->
             <div class="skill-category">
-                <div class="category-title">
-                    <div class="category-icon">🎨</div>
-                    Creative & Strategy
-                </div>
+                <div class="category-title"><div class="category-icon">🎨</div>Creative & Strategy</div>
                 <div class="skills-grid">
-                    <div class="skill-item">
-                        <span class="skill-name">Visual Design</span>
-                        <div class="skill-level">
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Web Content</span>
-                        <div class="skill-level">
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Analytics</span>
-                        <div class="skill-level">
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot active"></div>
-                            <div class="skill-dot"></div>
-                            <div class="skill-dot"></div>
-                        </div>
-                    </div>
+                    <div class="skill-item"><span class="skill-name">Visual Design</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">Web Content</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">Analytics</span><div class="skill-level"><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot active"></div><div class="skill-dot"></div><div class="skill-dot"></div></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Vika. All rights reserved.</p>
-    </footer>
+    <footer><p>&copy; 2026 Vika. All rights reserved.</p></footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
 <!DOCTYPE html>
@@ -815,12 +649,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --bg: #FAF8F5;
             --blue: #a2d2ff;
@@ -829,7 +658,6 @@
             --text: #1A1A1A;
             --secondary: #6B6B6B;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg);
@@ -838,29 +666,18 @@
             display: flex;
             flex-direction: column;
         }
-
-        /* Navigation */
         nav {
             padding: 30px 60px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
+            position: relative;
         }
-
-        .logo {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--brown);
-            text-decoration: none;
-        }
-
         .nav-links {
             display: flex;
             gap: 40px;
             list-style: none;
         }
-
         .nav-links a {
             text-decoration: none;
             color: var(--secondary);
@@ -868,25 +685,57 @@
             font-weight: 500;
             transition: color 0.3s;
         }
-
         .nav-links a:hover,
         .nav-links a.active {
             color: var(--blue);
         }
-
-        /* Portfolio Section */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--brown);
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            min-width: 200px;
+            z-index: 1000;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu li { list-style: none; margin-bottom: 12px; }
+        .mobile-menu li:last-child { margin-bottom: 0; }
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .mobile-menu a:hover { color: var(--blue); }
         .portfolio-section {
             flex: 1;
             margin: 0 20px 20px 20px;
-            border-radius: 40px;
+            border-radius: 40px 40px 0 0;
             padding: 80px 60px;
         }
-
-        .portfolio-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
+        .portfolio-header { text-align: center; margin-bottom: 80px; }
         .portfolio-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(3rem, 8vw, 6rem);
@@ -896,7 +745,6 @@
             margin-bottom: 20px;
             letter-spacing: -0.02em;
         }
-
         .portfolio-subtitle {
             font-size: 1.1rem;
             color: var(--secondary);
@@ -904,8 +752,6 @@
             max-width: 600px;
             margin: 0 auto;
         }
-
-        /* Featured Project (Rhode Replica) */
         .featured-project {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -917,7 +763,6 @@
             margin-bottom: 80px;
             box-shadow: 0 20px 60px rgba(156, 102, 68, 0.08);
         }
-
         .featured-badge {
             display: inline-block;
             padding: 8px 20px;
@@ -930,7 +775,6 @@
             border-radius: 50px;
             margin-bottom: 24px;
         }
-
         .featured-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 5vw, 3.5rem);
@@ -939,14 +783,12 @@
             line-height: 1.1;
             margin-bottom: 24px;
         }
-
         .featured-description {
             font-size: 1.05rem;
             color: var(--secondary);
             line-height: 1.7;
             margin-bottom: 32px;
         }
-
         .store-name-tag {
             display: inline-flex;
             align-items: center;
@@ -958,12 +800,7 @@
             font-weight: 600;
             color: var(--brown);
         }
-
-        .store-name-tag span {
-            color: var(--blue);
-            font-size: 1.2rem;
-        }
-
+        .store-name-tag span { color: var(--blue); font-size: 1.2rem; }
         .featured-btn {
             display: inline-flex;
             align-items: center;
@@ -977,21 +814,13 @@
             font-size: 1rem;
             transition: all 0.3s;
         }
-
         .featured-btn:hover {
             background: var(--brown-dark);
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(156, 102, 68, 0.3);
         }
-
-        .featured-btn .arrow {
-            transition: transform 0.3s;
-        }
-
-        .featured-btn:hover .arrow {
-            transform: translateX(5px);
-        }
-
+        .featured-btn .arrow { transition: transform 0.3s; }
+        .featured-btn:hover .arrow { transform: translateX(5px); }
         .featured-image {
             width: 100%;
             aspect-ratio: 4/3;
@@ -1004,13 +833,7 @@
             justify-content: center;
             border: 1px solid rgba(156, 102, 68, 0.1);
         }
-
-        .featured-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
+        .featured-image img { width: 100%; height: 100%; object-fit: cover; }
         .image-placeholder-text {
             font-family: 'Playfair Display', serif;
             font-size: 4rem;
@@ -1020,7 +843,6 @@
             text-align: center;
             line-height: 1;
         }
-
         .image-placeholder-text small {
             display: block;
             font-family: 'Inter', sans-serif;
@@ -1029,134 +851,42 @@
             margin-top: 10px;
             opacity: 0.5;
         }
-
-        /* Other Projects Grid */
-        .other-projects-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--brown);
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: #FFFFFF;
-            border-radius: 32px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(156, 102, 68, 0.06);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(156, 102, 68, 0.12);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 220px;
-            background: linear-gradient(135deg, var(--blue) 0%, #d4e8f5 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .project-image span {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.4);
-        }
-
-        .project-content {
-            padding: 28px;
-        }
-
-        .project-category {
-            font-size: 0.8rem;
-            color: var(--blue);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 10px;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--brown);
-            margin-bottom: 10px;
-        }
-
-        .project-desc {
-            font-size: 0.9rem;
-            color: var(--secondary);
-            line-height: 1.5;
-        }
-
-        /* Footer */
         footer {
             padding: 30px 60px;
             text-align: center;
             font-size: 0.85rem;
             color: var(--secondary);
         }
-
-        /* Mobile */
         @media (max-width: 1024px) {
-            .featured-project {
-                grid-template-columns: 1fr;
-                padding: 40px;
-                gap: 40px;
-            }
-            .featured-image {
-                order: -1;
-            }
+            .featured-project { grid-template-columns: 1fr; padding: 40px; gap: 40px; }
+            .featured-image { order: -1; }
         }
-
         @media (max-width: 768px) {
-            nav {
-                padding: 20px 30px;
-                flex-direction: column;
-                gap: 20px;
-            }
-            .nav-links {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .portfolio-section {
-                margin: 0 10px 10px 10px;
-                padding: 40px 24px;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            footer {
-                padding: 20px 30px;
-            }
+            nav { padding: 20px 30px; justify-content: flex-end; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .portfolio-section { margin: 0 10px 10px 10px; padding: 40px 24px; border-radius: 30px 30px 0 0; }
+            footer { padding: 20px 30px; }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">Vika.</a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="portfolio.html" class="active">Portfolio</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="shopify.html">Shopify</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="mobile-menu" id="mobileMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -1166,66 +896,42 @@
             <h1 class="portfolio-title">My Portfolio</h1>
             <p class="portfolio-subtitle">A selection of my recent Shopify projects and web development work</p>
         </div>
-
-        <!-- FEATURED PROJECT: RHODE REPLICA -->
         <div class="featured-project">
             <div class="featured-content">
                 <div class="featured-badge">Featured Project</div>
                 <h2 class="featured-title">Rhode Brand Page Recreation</h2>
-                <p class="featured-description">
-                    A pixel-perfect recreation of the Rhode brand experience, built and customized on Shopify. This project showcases advanced theme customization, premium visual design, and e-commerce best practices to deliver a seamless user experience.
-                </p>
-                
-                <div class="store-name-tag">
-                    <span>🛍️</span> Store Name: <strong>Viktoria</strong>
-                </div>
-
-                <a href="https://victoria-sarkisova.myshopify.com" target="_blank" class="featured-btn">
-                    View My Store 
-                    <span class="arrow">→</span>
-                </a>
+                <p class="featured-description">A pixel-perfect recreation of the Rhode brand experience, built and customized on Shopify. This project showcases advanced theme customization, premium visual design, and e-commerce best practices to deliver a seamless user experience.</p>
+                <div class="store-name-tag"><span>🛍️</span> Store Name: <strong>Viktoria</strong></div>
+                <a href="https://victoria-sarkisova.myshopify.com" target="_blank" class="featured-btn">View My Store <span class="arrow">→</span></a>
             </div>
-
             <div class="featured-image">
-                <!-- Հետո այստեղ կդնես քո սքրինշոթը՝ <img src="rhode-screenshot.jpg" alt="Rhode Replica"> -->
-                <div class="image-placeholder-text">
-                    Rhode<br>
-                    <small>Viktoria Store Preview</small>
-                </div>
+                <div class="image-placeholder-text">Rhode<br><small>Viktoria Store Preview</small></div>
             </div>
         </div>
-
-        <!-- OTHER PROJECTS (Կարող ես հետո փոխել կամ ջնջել) -->
-        <h3 class="other-projects-title">Other Works</h3>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">
-                    <span>02</span>
-                </div>
-                <div class="project-content">
-                    <div class="project-category">Landing Page</div>
-                    <h4 class="project-title">Beauty Brand Launch</h4>
-                    <p class="project-desc">High-converting landing page design for a new product campaign.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, #9c6644 0%, #c49a7c 100%);">
-                    <span>03</span>
-                </div>
-                <div class="project-content">
-                    <div class="project-category">Web Design</div>
-                    <h4 class="project-title">Wellness Studio</h4>
-                    <p class="project-desc">Modern website design with clean aesthetics and booking integration.</p>
-                </div>
-            </div>
-        </div>
-
     </section>
 
-    <footer>
-        <p>&copy; 2026 Vika. All rights reserved.</p>
-    </footer>
+    <footer><p>&copy; 2026 Vika. All rights reserved.</p></footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
 <!DOCTYPE html>
@@ -1238,12 +944,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --bg: #FAF8F5;
             --blue: #a2d2ff;
@@ -1252,7 +953,6 @@
             --text: #1A1A1A;
             --secondary: #6B6B6B;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg);
@@ -1261,29 +961,18 @@
             display: flex;
             flex-direction: column;
         }
-
-        /* Navigation */
         nav {
-            padding: 20px 40px;
+            padding: 30px 60px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
+            position: relative;
         }
-
-        .logo {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--brown);
-            text-decoration: none;
-        }
-
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             list-style: none;
         }
-
         .nav-links a {
             text-decoration: none;
             color: var(--secondary);
@@ -1291,13 +980,50 @@
             font-weight: 500;
             transition: color 0.3s;
         }
-
         .nav-links a:hover,
         .nav-links a.active {
             color: var(--blue);
         }
-
-        /* Contact Section (վերևի մասը) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--brown);
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            min-width: 200px;
+            z-index: 1000;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu li { list-style: none; margin-bottom: 12px; }
+        .mobile-menu li:last-child { margin-bottom: 0; }
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .mobile-menu a:hover { color: var(--blue); }
         .contact-section {
             flex: 1;
             padding: 80px 40px 60px 40px;
@@ -1307,7 +1033,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .contact-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 6vw, 4rem);
@@ -1317,20 +1042,17 @@
             margin-bottom: 40px;
             letter-spacing: -0.02em;
         }
-
         .contact-title .italic {
             font-style: italic;
             font-weight: 700;
             color: var(--blue);
         }
-
         .contact-links {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
         }
-
         .contact-link-item {
             display: inline-flex;
             align-items: center;
@@ -1344,34 +1066,24 @@
             border-radius: 50px;
             transition: all 0.3s ease;
         }
-
         .contact-link-item:hover {
             background: var(--brown);
             color: #FFFFFF;
             transform: translateY(-2px);
         }
-
-        .contact-link-item svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
-
-        /* Footer (Նկարի պես) */
+        .contact-link-item svg { width: 18px; height: 18px; fill: currentColor; }
         .footer {
             background: var(--brown);
             border-radius: 40px 40px 0 0;
             margin: 0 20px 0 20px;
             padding: 40px 60px 30px 60px;
         }
-
         .footer-divider {
             width: 100%;
             height: 1px;
             background: rgba(255, 255, 255, 0.2);
             margin-bottom: 30px;
         }
-
         .footer-content {
             display: flex;
             justify-content: space-between;
@@ -1379,86 +1091,60 @@
             flex-wrap: wrap;
             gap: 20px;
         }
-
         .footer-copyright {
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.8);
         }
-
         .footer-links {
             display: flex;
             gap: 30px;
         }
-
         .footer-links a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s;
         }
-
-        .footer-links a:hover {
-            color: var(--blue);
-        }
-
-        /* Mobile */
+        .footer-links a:hover { color: var(--blue); }
         @media (max-width: 768px) {
-            nav {
-                padding: 16px 24px;
-                flex-direction: column;
-                gap: 16px;
-            }
-            .nav-links {
-                gap: 14px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .contact-section {
-                padding: 60px 24px 40px 24px;
-            }
-            .footer {
-                margin: 0 10px 0 10px;
-                padding: 30px 24px 20px 24px;
-                border-radius: 30px 30px 0 0;
-            }
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 16px;
-            }
-            .footer-links {
-                gap: 20px;
-            }
+            nav { padding: 20px 30px; justify-content: flex-end; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .contact-section { padding: 60px 24px 40px 24px; }
+            .footer { margin: 0 10px 0 10px; padding: 30px 24px 20px 24px; border-radius: 30px 30px 0 0; }
+            .footer-content { flex-direction: column; text-align: center; gap: 16px; }
+            .footer-links { gap: 20px; }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">Vika.</a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="shopify.html">Shopify</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="mobile-menu" id="mobileMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Contact Section -->
     <section class="contact-section">
-        <h1 class="contact-title">
-            Let's make something <br>
-            <span class="italic">great together.</span>
-        </h1>
-
+        <h1 class="contact-title">Let's make something <br><span class="italic">great together.</span></h1>
         <div class="contact-links">
             <a href="mailto:vikayan236@gmail.com" class="contact-link-item">
                 <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 vikayan236@gmail.com
             </a>
-
             <a href="https://www.linkedin.com/in/vika-yan-7a4732434/" target="_blank" rel="noopener" class="contact-link-item">
                 <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 LinkedIn
@@ -1466,7 +1152,6 @@
         </div>
     </section>
 
-    <!-- Footer (Նկարի պես) -->
     <footer class="footer">
         <div class="footer-divider"></div>
         <div class="footer-content">
@@ -1477,5 +1162,26 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
